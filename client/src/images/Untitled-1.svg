@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="179" height="30" viewBox="0 0 179 30">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 29.167px;
+        font-family: 'Bowlby One SC', cursive;
+      }
+
+      .cls-2 {
+        fill: #4fa7e7;
+      }
+    </style>
+  </defs>
+  <text id="SubKeeper" class="cls-1" x="-0.5" y="28.25">Sub<tspan class="cls-2">Keeper</tspan></text>
+</svg>
