@@ -14,7 +14,7 @@ import SchoolTodo from './components/dashboard/category/school/todo/SchoolTodo';
 
 function App() {
 
-  const { user } = useAuthContext()
+  const {user} = useAuthContext()
 
   return (
     <BrowserRouter>
