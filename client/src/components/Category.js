@@ -11,13 +11,13 @@ export const Category = () => {
         <h1>Get started as</h1>
         <div id="category">
             <div className="subcategory">
-              <NavLink to='/school/dashboard'>
+              <NavLink to='/school-dashboard'>
                 <img src={School} alt=""/>
                 <span>School Student</span>
               </NavLink>
             </div>
             <div className="subcategory">
-              <NavLink to='/college/dashboard'>
+              <NavLink to='/college-dashboard'>
                 <img src={College} alt=""/>
                 <span>College Student</span>
             </NavLink>

@@ -1,21 +1,18 @@
 import React, {useState} from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../../../../images/logo2.svg';
-import '../../Dashboard.scss';
-import COACHINGTiles from './coaching/COACHINGTiles';
-import JEENEETTiles from './jee-neet/JEENEETTiles';
+import {NavLink} from 'react-router-dom';
+import logo from '../../../../../images/logo2.svg';
+import Todo from './Todo';
+import TodoForm from './TodoForm';
 
-const Sidebar = () => {
+const CollegeTodo = () => {
 
-    const [active, setActive] = useState("JEETile");
-  
-    function sidebarClick() {
-        document.querySelector('nav').classList.toggle('close');
-    }
+  function sidebarClick() {
+    document.querySelector('nav').classList.toggle('close');
+  }
 
-    function searchClick() {
-        document.querySelector('nav').classList.remove('close');
-    }
+  function searchClick() {
+      document.querySelector('nav').classList.remove('close');
+  }
 
     function modeSwitch(){
         document.querySelector('.sidebar-main').classList.toggle('dark');
@@ -24,18 +21,45 @@ const Sidebar = () => {
             document.querySelector('.mode-text').innerHTML = "Light Mode";
         }else{
             document.querySelector('.mode-text').innerHTML = "Dark Mode";
-        }
+    }
     }
 
-    const navLink = document.querySelectorAll("li");
+    const [todos, setTodos] = useState([]);
 
-    navLink.forEach(element => {
-        element.addEventListener("click", function() {
-            navLink.forEach(a=>a.classList.remove("active-link"))
+  const addTodo = todo => {
+    if (!todo.text || /^\s*$/.test(todo.text)) {
+      return;
+    }
 
-            this.classList.add("active-link");
-        })
-    })
+    const newTodos = [todo, ...todos];
+
+    setTodos(newTodos);
+    console.log(...todos);
+  };
+
+  const updateTodo = (todoId, newValue) => {
+    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+      return;
+    }
+
+    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+  };
+
+  const removeTodo = id => {
+    const removedArr = [...todos].filter(todo => todo.id !== id);
+
+    setTodos(removedArr);
+  };
+
+  const completeTodo = id => {
+    let updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.isComplete = !todo.isComplete;
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
 
   return (
     <div className='sidebar-main'>
@@ -64,7 +88,7 @@ const Sidebar = () => {
 
                 {/* <ul className="menu-links"> */}
                     <li className="nav-link active">
-                        <NavLink to = "/school-dashboard">
+                        <NavLink to = "/college-dashboard">
                             <i className='bx bx-home-alt icon' ></i>
                             <span className="text nav-text">Dashboard</span>
                         </NavLink>
@@ -78,7 +102,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className="nav-link">
-                        <NavLink to="/school-todo">
+                        <NavLink to="/college-todo">
                             <i class='bx bx-list-check icon'></i>
                             <span className="text nav-text">Todo List</span>
                         </NavLink>
@@ -124,27 +148,22 @@ const Sidebar = () => {
               </div>
             </div>
         </nav>
-
-        <div className="navleft">
-            <ul>
-                <li><a>Competitive <i className="fa fa-solid fa-caret-down"></i></a>
-                    <ul className="drop-link">
-                        <li className="sub-link"><a onClick={() => setActive("JEETile")}>JEE</a></li>
-                        <li className="sub-link"><a onClick={() => setActive("WEBTile")}>NEET</a></li>
-                    </ul>
-                </li>
-                <li><a>Coaching <i className="fa fa-solid fa-caret-down"></i></a>
-                    <ul className="drop-link">
-                        <li className="sub-link"><a onClick={() => setActive("COACHINGTile")}>JEE</a></li>
-                        <li className="sub-link"><a onClick={() => setActive("WEBTile")}>NEET</a></li>
-                    </ul>
-                </li>
-            </ul>   
+        
+        {/* COLLEGE TODO */}
+        <div className='CollegeTodo'>
+            <h1>What's the Plan for Today?</h1>
+            <TodoForm onSubmit={addTodo} />
+            <Todo
+                todos={todos}
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
+                updateTodo={updateTodo}
+            />
         </div>
-        {active === "JEETile" && <JEENEETTiles />}
-        {active === "COACHINGTile" && <COACHINGTiles />}
     </div>
+
+    
   )
 }
 
-export default Sidebar;
+export default CollegeTodo;

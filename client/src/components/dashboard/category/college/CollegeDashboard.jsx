@@ -69,7 +69,7 @@ const Sidebar = () => {
 
                 {/* <ul className="menu-links"> */}
                     <li className="nav-link active">
-                        <NavLink to = "/college/dashboard">
+                        <NavLink to = "/college-dashboard">
                             <i className='bx bx-home-alt icon' ></i>
                             <span className="text nav-text">Dashboard</span>
                         </NavLink>
@@ -83,7 +83,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className="nav-link">
-                        <NavLink to="todolist">
+                        <NavLink to="/college-todo">
                             <i class='bx bx-list-check icon'></i>
                             <span className="text nav-text">Todo List</span>
                         </NavLink>
