@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dekho": "nodemon server.js"
+    "dekho": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
