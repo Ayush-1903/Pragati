@@ -22,7 +22,7 @@ export const Home = () => {
                         </div>
                         <div className="col-lg-12">
                             <div className="border-first-button scroll-to-section">
-                            <NavLink to = "/signup">Get Started <i className="fa fa-solid fa-arrow-right"></i></NavLink>
+                                <NavLink to = "/auth">Get Started <i className="fa fa-solid fa-arrow-right"></i></NavLink>
                             </div>
                         </div>
                         </div>
