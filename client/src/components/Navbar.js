@@ -5,6 +5,7 @@ import logo2 from '../images/logo2.svg';
 import NavWrapper from './style/Nav.style';
 
 export const Navbar = () => {
+
   return (
     <NavWrapper>
     <div>
@@ -21,7 +22,8 @@ export const Navbar = () => {
                     <li><NavLink to="/about">About</NavLink></li>
                     <li><NavLink to="/services">Services</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li> 
-                    <li><div className="border-first-button"><NavLink to="/signup">Sign Up</NavLink></div></li> 
+                    <li><div className="border-first-button"><NavLink to="/auth">Sign Up</NavLink></div>
+                    </li> 
                     </ul>        
                     <NavLink className='menu-trigger'>    
                         <span>Menu</span>
