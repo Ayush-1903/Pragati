@@ -105,7 +105,7 @@ const Auth = () => {
 
                 <div className="form-container sign-in-container">
                     {/* <form action="/category"> */}
-                    <form onSubmit={handleLoginSubmit}>
+                    <form onSubmit= {() => handleLoginSubmit ()}>
                         <h1>Log in</h1>
                         {/* <div className="social-container">
                             <img src={google} alt=""/>

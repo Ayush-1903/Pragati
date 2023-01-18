@@ -21,7 +21,7 @@ function App() {
         <Route path="/services" element={[<Navbar />, <Services />]}/>
         <Route path="/contact" element={[<Navbar />, <Contact />]}/>
         <Route path="/category" element={<Category />}/>
-        <Route path='/college'>
+        <Route path='/dashboard'>
           <Route index element={<Sidebar />}/>
         </Route>
       </Routes>

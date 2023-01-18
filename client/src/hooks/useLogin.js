@@ -34,7 +34,7 @@ export const useLogin = () => {
       // update loading state
       setLoginIsLoading(false)
 
-      navigate('/college-dashboard', {replace: true})
+      navigate('/dashboard', {replace: true})
     }
   }
 
