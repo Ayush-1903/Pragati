@@ -1,5 +1,5 @@
 import React from 'react'
-import Project from '../images/Organizing projects-cuate.svg';
+import Project from '../images/Organizing projects-cuate.svg';  
 import { NavLink } from 'react-router-dom';
 import HomeWrapper from './style/Home.style';
 
@@ -16,8 +16,8 @@ export const Home = () => {
                     <div className="left-content show-up header-text" data-aos="fade-right" data-aos-duration="900">
                         <div className="row">
                         <div className="col-lg-12">
-                            <h6>Subscription keeper</h6>
-                            <h2>Organize All Your Tasks In One Place. </h2>
+                            <h6>We help in your pragati</h6>
+                            <h2>Organize All Your Websites In One Place. </h2>
                             <p>Create clear, multi-functional to-do lists to easily manage your ideas and work from anywhere so you never forget anything again.</p>
                         </div>
                         <div className="col-lg-12">

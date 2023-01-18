@@ -1,7 +1,8 @@
 import React from 'react';
-import email from '../images/email.png';
-import budget from '../images/budget.png';
-import subscription from '../images/subscription.png';
+import web from '../images/web.png';
+import task from '../images/task.png';
+import website from '../images/website.png';
+import chat from '../images/chat-group.png';
 import ServiceWrapper from './style/Services.style';
 
 const Services = () => {
@@ -14,26 +15,26 @@ const Services = () => {
             </div>
             <div className='row' data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
                 <div className='service'>
-                    <img src={email}></img>
-                    <h2>Notification</h2>
-                    <p>Get Notifications regarding your Subscription dates in your email</p>
+                    <img src={web}></img>
+                    <h2>Website Tiles</h2>
+                    <p>Get access to many website tiles in your dashboard and access them easily</p>
                 </div>
                 <div className='service'>
-                    <img src={budget}></img>
-                    <h2>Expense Tracking</h2>
-                    <p>Keep track of your expennses for your subscriptions</p>
+                    <img src={task}></img>
+                    <h2>Todo-list</h2>
+                    <p>List all your important tasks and track them daily with our todo-list to get more done</p>
                 </div>
                 <div className='service'>
-                    <img src={subscription}></img>
-                    <h2>Add Subscription</h2>
-                    <p>Users can add new subscriptions easily</p>
+                    <img src={website}></img>
+                    <h2>Custom Tiles</h2>
+                    <p>Add your custom website tiles and access them from your dashboard easily</p>
+                </div>
+                <div className='service'>
+                    <img src={chat}></img>
+                    <h2>Chat</h2>
+                    <p>Chat with your members while working in a group project</p>
                 </div>
                 {/* <div className='service'>
-                    <img src={subscription}></img>
-                    <h2>Add Subscription</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-                <div className='service'>
                     <img src={subscription}></img>
                     <h2>Add Subscription</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>

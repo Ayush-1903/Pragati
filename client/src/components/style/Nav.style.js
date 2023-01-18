@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
+
 const NavWrapper = styled.div`
+
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
 ul, li {
     padding: 0;
@@ -94,13 +98,12 @@ p {
   }
 
   .header-area .main-nav .logo .kepr{
-    color: #4FA7E7;
+    font-family: 'Play', sans-serif;
+    font-weight: 800;
+    color: #263e63;
+    font-size: 2.5rem;
   }
 
-  .header-area .main-nav .logo .logo1{
-    padding: 0px 10px;
-  }
-  
   .background-header .main-nav .logo {
     line-height: 80px;
     z-index: 999;

@@ -17,7 +17,7 @@ export const Category = () => {
               </NavLink>
             </div>
             <div className="subcategory">
-              <NavLink to='/college-dashboard'>
+              <NavLink to='/college'>
                 <img src={College} alt=""/>
                 <span>College Student</span>
             </NavLink>

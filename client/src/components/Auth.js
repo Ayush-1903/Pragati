@@ -4,8 +4,8 @@ import { useSignup } from '../hooks/useSignup';
 import { useLogin } from '../hooks/useLogin';
 
 import '../../src/App.css';
+import authImage from '../images/scattered-forcefields.svg';
 import Wrapper from './style/SignUp.style';
-import google from '../images/Google__G__Logo.svg';
 
 const initialState = { 
     firstName: '', 
@@ -50,13 +50,13 @@ const Auth = () => {
 
   return (
     <Wrapper>
-    <div className="registration">
+    <div className="registration" style={{backgroundImage : `url(${authImage})`, backgroundRepeat:'no-repeat', backgroundSize: 'cover'}}>
         <h2>Get Started</h2>
             <div className="container" id="container">
 
                 <div className="form-container sign-up-container">
                     {/* <form action="/category"> */}
-                    <form onSubmit={handleSignupSubmit}>
+                    <form onSubmit= {() => handleSignupSubmit()}>
                         <h1>Create Account</h1>
                         {/* <div className="social-container">
                             <img src={google} alt=""/>
@@ -95,7 +95,7 @@ const Auth = () => {
                             checked={formData.isSchoolStudent}
                             onChange={handleChange}
                         />
-                        <button type="submit">
+                        <button type="submit" >
                             Sign Up
                         </button>
                         {signupError && <div className="error">{signupError}</div>}

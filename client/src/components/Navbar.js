@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // import logo from '../images/Untitled-1.svg';
-import logo2 from '../images/logo2.svg';
+import logo from '../images/Logo.svg';
 import NavWrapper from './style/Nav.style';
 
 export const Navbar = () => {
@@ -15,7 +15,7 @@ export const Navbar = () => {
                 <div className="col-12">
                 <nav className="main-nav">
                     <NavLink to="/" className="logo">
-                        <span>Sub<span><img src={logo2}/></span><span className='kepr'>eeper</span></span>
+                        <span><img src={logo}/><span className='kepr'>RAGATI</span></span>
                     </NavLink>
                     <ul className="nav">
                     <li><NavLink to="/">Home</NavLink></li>

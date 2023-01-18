@@ -26,25 +26,25 @@ export const About = () => {
                         <h4>Who We <em>Are</em></h4>
                         <div className="line-dec"></div>
                         </div>
-                        <p>PlanIt is the flexible work management tool where teams can ideate plans, collaborate on projects, organize workflows, and track progress in a visual, productive  way. From brainstorm to planning to execution, PlanIt manages the big milestones and the day-to-day tasks of working together and getting things done.</p>
+                        <p>Pragati is a flexible work management tool where you can find all the websites required for your growth, learnings and add you custom websites and have acces to all websites in one place. </p>
                         <div className="row">
                         <div className="col-lg-4 col-sm-4" data-aos="zoom-in" data-aos-delay="300">
                             <div className="info-post">
                             <div className="about-icon">
-                                <img src={task} alt=""></img>
-                                <a href="#">Todo List</a>
+                                <img src={web} alt=""></img>
+                                <a href="#">Organize</a>
                                 <br></br>
-                                <span>List everything that you have to do, with important tasks at the top of the list.</span>
+                                <span>Organize your favourite and necessary websites.</span>
                             </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-sm-4" data-aos="zoom-in" data-aos-delay="400">
                             <div className="info-post">
                             <div className="about-icon">
-                                <img src={web} alt=""></img>
-                                <a href="#">Organize</a>
+                                <img src={task} alt=""></img>
+                                <a href="#">Todo List</a>
                                 <br></br>
-                                <span>Organize your favourite and necessary websites in one place so it's easy to access.</span>
+                                <span>List your important tasks and track them daily.</span>
                             </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ export const About = () => {
                                 <img src={chat} alt=""></img>
                                 <a href="#">Chat</a>
                                 <br></br>
-                                <span>Work smarter as a team with real-time chat to get more done together.</span>
+                                <span>Work smarter as a team with real-time chat.</span>
                             </div>
                             </div>
                         </div>
