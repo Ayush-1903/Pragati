@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import '../../../Dashboard.scss';
 import logo from '../../../../../images/logo2.svg';
 import Nav from '../Nav/Nav';
-import CollegeTodo from '../Todo/CollegeTodo';
+import SchoolTodo from '../TodoSchool/SchoolTodo';
 import CustomTile from '../Custom/CustomTile';
 import Chat from '../Chat/Chat';
 import Profile from '../Profile/Profile';
@@ -101,13 +101,13 @@ const Sidebar = () => {
                 <div className="bottom-content">
                     <li className="">
                         <a onClick={() => setActive("Profile")}>
-                            <i className='bx bx-user icon'></i>
+                            <i class='bx bxs-user icon'></i>
                             <span className="text nav-text">Profile</span>
                         </a>
                     </li>
 
                     <li className="">
-                        <a>
+                        <a href="#">
                             <i className='bx bx-log-out icon' ></i>
                             <span className="text nav-text">Logout</span>
                         </a>
@@ -130,7 +130,7 @@ const Sidebar = () => {
             </nav>
 
             {active === "Nav" && <Nav />}
-            {active === "CollegeTodo" && <CollegeTodo />}
+            {active === "CollegeTodo" && <SchoolTodo />}
             {active === "Custom" && <CustomTile/>}
             {active === "Chat" && <Chat/>}
             {active === "Profile" && <Profile/>}

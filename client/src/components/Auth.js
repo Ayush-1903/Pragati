@@ -91,7 +91,7 @@ const Auth = () => {
                         <label htmlFor="isSchoolStudent">Are you a School Student? </label>
                         <input 
                             name="isSchoolStudent" 
-                            type="checkbox" required id="isSchoolStudent"
+                            type="checkbox" id="isSchoolStudent"
                             checked={formData.isSchoolStudent}
                             onChange={handleChange}
                         />

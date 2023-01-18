@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Navbar from './components/Navbar';
 import Category from './components/Category';
 import Sidebar from './components/dashboard/category/college/Sidebar/Sidebar';
+import SchoolSidebar from './components/dashboard/category/school/Sidebar/SchoolSidebar';
 import Contact from './components/Contact';
 
 function App() {
@@ -21,11 +22,9 @@ function App() {
         <Route path="/services" element={[<Navbar />, <Services />]}/>
         <Route path="/contact" element={[<Navbar />, <Contact />]}/>
         <Route path="/category" element={<Category />}/>
-        <Route path='/dashboard'>
-          <Route index element={<Sidebar />}/>
-        </Route>
+        <Route path='/college-dashboard' element={<Sidebar />}></Route>
+        <Route path='/school-dashboard' element={<SchoolSidebar />}></Route>
       </Routes>
-
     </BrowserRouter>
   );
 }

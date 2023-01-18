@@ -55,6 +55,7 @@ const Fav = () => {
                     </div>
                 </div>
             </section>
+
             <Popup onAdd={addTile} trigger={buttonPopup} setTrigger={setButtonPopup} />
         </div>
   )
