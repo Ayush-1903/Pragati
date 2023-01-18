@@ -34,7 +34,12 @@ export const useSignup = () => {
       // update loading state
       setSignupIsLoading(false)
       
-      navigate('/college-dashboard', {replace: true})
+      if(isSchoolStudent){
+        navigate('/school-dashboard', {replace: true})
+      }
+      else{
+        navigate('/college-dashboard', {replace: true})
+      }
     }
   }
 
