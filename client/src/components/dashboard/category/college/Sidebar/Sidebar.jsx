@@ -3,14 +3,17 @@ import { NavLink } from 'react-router-dom';
 import '../../../Dashboard.scss';
 import logo from '../../../../../images/logo2.svg';
 import Nav from '../Nav/Nav';
-import CollegeTodo from '../Todo/CollegeTodo';
+import CollegeTodo from '../todo/CollegeTodo';
 import CustomTile from '../Custom/CustomTile';
 import Chat from '../Chat/Chat';
 import Profile from '../Profile/Profile';
 
+import { useLogout } from '../../../../../hooks/useLogout';
+
 const Sidebar = () => {
 
     const [active, setActive] = useState("Nav");
+    const {logout} = useLogout();
 
     const sideLink = document.querySelectorAll("a");
 
@@ -107,7 +110,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className="">
-                        <a>
+                        <a onClick={logout}>
                             <i className='bx bx-log-out icon' ></i>
                             <span className="text nav-text">Logout</span>
                         </a>
