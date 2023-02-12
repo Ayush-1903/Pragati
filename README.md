@@ -1,6 +1,6 @@
 # Pragati
 
-![home page](./client/public/homePage.png)
+![home page](/client/public/homePage.png)
 
 ## Introduction
 Pragati is a comprehensive educational platform that brings together all the resources that students need to succeed in school and college. With features like learning resources, a to-do list, a chat feature, and a bookmark system, Pragati makes it easier for students to stay organized and motivated.
@@ -84,6 +84,5 @@ Example Response:
 }
 ```
 
-### Conclusion
-This API provides a simple and secure way to handle user authentication and authorization. Ensure that the token returned by the API is stored securely and sent with every protected resource request.
+
 ---
