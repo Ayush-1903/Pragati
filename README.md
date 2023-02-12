@@ -1,6 +1,6 @@
 # Pragati
 
-<img src="client/public/homePage.PNG" >
+<img src="client/public/homePage.png" style="width:1316px; height:833px;" >
 
 ## Introduction
 Pragati is a comprehensive educational platform that brings together all the resources that students need to succeed in school and college. With features like learning resources, a to-do list, a chat feature, and a bookmark system, Pragati makes it easier for students to stay organized and motivated.
