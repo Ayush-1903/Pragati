@@ -1,6 +1,6 @@
 # Pragati
 
-![dash board](client/public/page.gif)
+![dash-board](page.gif)
 
 ## Introduction
 Pragati is a comprehensive educational platform that brings together all the resources that students need to succeed in school and college. With features like learning resources, a to-do list, a chat feature, and a bookmark system, Pragati makes it easier for students to stay organized and motivated.
