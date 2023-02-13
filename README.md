@@ -1,6 +1,6 @@
 # Pragati
 
-<p><img align="center" alt="gif" src="page.gif" width="900px" height="570px" /></p>
+![page](page.gif)
 
 ## Introduction
 Pragati is a comprehensive educational platform that brings together all the resources that students need to succeed in school and college. With features like learning resources, a to-do list, a chat feature, and a bookmark system, Pragati makes it easier for students to stay organized and motivated.
@@ -22,14 +22,20 @@ Pragati is a comprehensive educational platform that brings together all the res
 This API allows users to sign up and log in to access protected resources on your website. It includes two endpoints: `/user/signup` and `/user/login`.
 
 ### Endpoints
-#### `POST BaseURL/user/signup`
-This endpoint is used for user registration. It requires the following parameters in the request body:
+#### Signup
+```http
+  POST /user/signup
+```
+It requires the following parameters in the request body:
 
-- `firstName`: The first name of the user. (Required)
-- `lastName`: The last name of the user. (Required)
-- `email`: The email address of the user. (Required)
-- `password`: The password of the user. (Required)
-- `isSchoolStudent`: A boolean indicating whether the user is a school student or not. (Optional)
+| Parameter      | Type     | Description                           |
+| :------------- | :------- | :------------------------------------ |
+| `firstName`    | `string` | **Required**. First name of the user. |
+| `lastName`     | `string` | **Required**. Last name of the user.  |
+| `email`        | `string` | **Required**. Email address of user.  |
+| `password`     | `string` | **Required**. Password of the user.   |
+| `isSchoolStudent` | `boolean` | Optional. Indicates whether the user is a school student or not. Default value is false. |
+
 
 Example Request Body:
 ```
@@ -47,19 +53,24 @@ Upon successful registration, the API returns a JSON object with a token that ca
     "user": {
         "name": "Levi Ackerman",
         "email": "levi@scoutregiment.org",
-        "password": "$2a$10$mHLLM/Wdu.e1k4GpbT0tD.tzeIaZlLzBwpVy5JBVs9/iRAVVshUTy",
+        "password": "$2a$10$mHLLM/Wdu.eBVs9/iRAVVshUTy",
         "isSchoolStudent": false,
         "_id": "63e8c3ee5"
     },
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U4YzNlZTUyOTY4NWVmOWNkNzRiZTUiLCJlbWFpbCI6ImxldmlAc2NvdXRyZWdpbWVudC5vcmciLCJpYXQiOjE2NzYxOTg4OTQsImV4cCI6MTY3NjI4NTI5NH0.9tFwOjJTLKbFWgV8blqTkbNC53gWr0WgKfq9ljkJftE"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U4YzNlZTUyOTY4NWVTUiLCJgWr0WgKfq9ljkJftE"
 }
 ```
 
-#### `POST BaseURL/user/login`
-This endpoint is used for user login. It requires the following parameters in the request body:
+#### Login
+```http
+  POST /user/signup
+```
+It requires the following parameters in the request body:
 
-- `email`: The email address of the user. (Required)
-- `password`: The password of the user. (Required)
+| Parameter      | Type     | Description                           |
+| :------------- | :------- | :------------------------------------ |
+| `email`        | `string` | **Required**. Email address of user.  |
+| `password`     | `string` | **Required**. Password of the user.   |
 
 Example Request Body:
 ```
@@ -77,10 +88,10 @@ Example Response:
         "_id": "63e8c3ee5",
         "name": "Levi Ackerman",
         "email": "levi@scoutregiment.org",
-        "password": "$2a$10$mHLLM/Wdu.e1k4GpbT0tD.tzeIaZlLzBwpVy5JBVs9/iRAVVshUTy",
+        "password": "$2a$10$mHLLM/Wdu.eBVs9/iRAVVshUTy",
         "isSchoolStudent": false
     },
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U4YzNlZTUyOTY4NWVmOWNkNzRiZTUiLCJlbWFpbCI6ImxldmlAc2NvdXRyZWdpbWVudC5vcmciLCJpYXQiOjE2NzYxOTkwMTYsImV4cCI6MTY3NjI4NTQxNn0.7m98q9YjkBhA3oG0l6uNH_H1qebNWRLvlE68mwClkgw"
+    "token": "eyJhbGciOiJIUzI1NiI2M2U4YzNlZTUyOTY4NWVmO3oG0l6uNH_H1qebNWRLvlE68mwClkgw"
 }
 ```
 
