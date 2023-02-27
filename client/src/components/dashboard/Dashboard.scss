@@ -34,14 +34,14 @@
 }
 
 .sidebar-main.dark{
-    --body-color: #0e0e0e;
-    --sidebar-color: #171717;
-    --primary-color: #3a3b3c;
-    --primary-color-light: #3a3b3c;
+    --body-color: #171717;
+    --sidebar-color: #252525;
+    --primary-color: #454546;
+    --primary-color-light: #454546;
     --toggle-color: #fff;
-    --text-color: #ccc;
-    --box-color: #171717;
-    --dropdown-color: #171717;
+    --text-color: #f1f0f0;
+    --box-color: #252525;
+    --dropdown-color: #2f2e2e;
 }
 
 /* ===== Sidebar ===== */
@@ -267,6 +267,10 @@ header .image-text .profession{
     opacity: 0;
 }
 
+.bottom-content li{
+    cursor: pointer;
+}
+
 .menu-bar .bottom-content .toggle-switch{
     position: absolute;
     right: 0;
@@ -276,7 +280,6 @@ header .image-text .profession{
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    cursor: pointer;
 }
 
 .toggle-switch .switch{
@@ -400,7 +403,7 @@ ul .active-link{
     border-radius: 0 10px 0px 0px;
 }
 
-.navleft ul .drop-link li:hover:nth-child(3){
+.navleft ul .drop-link li:hover:nth-child(4){
     border-radius: 0 0px 10px 10px;
 }
 
@@ -743,13 +746,6 @@ main{
     );
 }
   
-// .todo-row:nth-child(4n + 3) {
-//     background: linear-gradient(
-//       90deg,
-//       rgba(20, 159, 255, 1) 0%,
-//       rgba(17, 122, 255, 1) 100%
-//     );
-// }
   
 .icons {
     display: flex;
@@ -786,8 +782,12 @@ main{
 }
 
 #services .custom-container{
+    width: 40%;
+    // left: 360px;
+    left: 28%;  
+    overflow-x: hidden;
     border: 2px solid rgb(154, 200, 253);
-    background: transparent;    
+    background: transparent;
 }
 
 .add-icon{
@@ -797,12 +797,6 @@ main{
     background: linear-gradient(to right, #0062db, #00d0ff, #0062db);
     background-clip: text;
     -webkit-background-clip:text;
-}
-
-#services .box:hover {
-    -webkit-transform: scale(1.08);
-    transform: scale(1.08);
-    box-shadow: 0 3px 10px 0 rgb(154, 200, 253);
 }
 
 #services .box:hover .add-icon {
@@ -817,10 +811,9 @@ main{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 115%;
     height: 100vh;
     background: transparent;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -912,18 +905,50 @@ main{
 
 .popup-inner .popup-wrapper .tile-submit{
     position: relative;
+    display: inline-block;
     left: 25%;
     top: 80px;
     border: none;
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 10px 20px;
+    background: transparent;
     font-weight: 500 !important;
-    transition: all .3s;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    transition: all .3s ease;
 }
- 
-.popup-inner .popup-wrapper .tile-submit:hover {
-    background-color: rgb(80, 170, 255);
-    color: #fff !important;
+
+.popup-inner .popup-wrapper .btn-15{
+    background: rgb(80, 170, 255);
+    border: none;
+    z-index: 1;
+}
+
+.popup-inner .popup-wrapper .btn-15:after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #215ffb;
+    border-radius: 5px;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+}
+
+.popup-inner .popup-wrapper .btn-15:hover {
+    color: #fff;
+}
+
+.popup-inner .popup-wrapper .btn-15:hover:after {
+    left: 0;
+    width: 100%;
 }
 
 //Chat

@@ -13,20 +13,23 @@ const Wrapper = styled.div`
 
 h1 {
 	font-weight: bold;
-	margin: 0;
+	margin: 10px;
+	font-size: 2rem;
 	color: #000000;
 }
 
 h2 {
 	text-align: center;
+	margin-bottom: 30px;
+	font-weight: 700;
 }
 
 p {
 	font-family: 'Poppins', sans-serif;
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 18px;
+	letter-spacing: 0.6px;
 	margin: 20px 0 30px;
 	color: #000000;
 }
@@ -56,6 +59,7 @@ button {
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 	cursor: pointer;
+	margin: 20px;
 	font-family: 'Poppins', sans-serif;
 }
 
@@ -87,8 +91,8 @@ form {
 input {
 	background-color: #eee;
 	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
+	padding: 10px 13px;
+	margin: 6px 0;
 	width: 100%;
 	border-radius: 20px;
 	font-family: 'Poppins', sans-serif;

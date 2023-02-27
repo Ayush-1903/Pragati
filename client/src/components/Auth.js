@@ -1,8 +1,6 @@
 import React, {useState} from 'react';   
-
 import { useSignup } from '../hooks/useSignup';
 import { useLogin } from '../hooks/useLogin';
-
 import '../../src/App.css';
 import authImage from '../images/scattered-forcefields.svg';
 import Wrapper from './style/SignUp.style';
@@ -88,13 +86,13 @@ const Auth = () => {
                             onChange={handleChange} 
                             value={formData.password}
                         />
-                        <label htmlFor="isSchoolStudent">Are you a School Student? </label>
+                        {/* <label htmlFor="isSchoolStudent">Are you a School Student? </label>
                         <input 
                             name="isSchoolStudent" 
                             type="checkbox" id="isSchoolStudent"
                             checked={formData.isSchoolStudent}
                             onChange={handleChange}
-                        />
+                        /> */}
                         <button type="submit" >
                             Sign Up
                         </button>
@@ -136,7 +134,7 @@ const Auth = () => {
                     <div className="overlay">
                         <div className="overlay-panel overlay-left">
                             <h1>Welcome Back!</h1>
-                            <p>To keep connected with us please login with your personal info</p>
+                            <p>To keep connected with us please login with your personal info.</p>
                             <button className="ghost" id="signIn" onClick={signInClick}>Sign In</button>
                         </div>
                         <div className="overlay-panel overlay-right">
