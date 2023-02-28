@@ -22,7 +22,7 @@ export const useLogin = () => {
 
         if (!response.ok) {
             setLoginIsLoading(false);
-            setLoginError(json.error);
+            setLoginError(json.message);
         }
         if (response.ok) {
             // save the user to local storage

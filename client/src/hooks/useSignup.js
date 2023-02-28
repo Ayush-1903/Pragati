@@ -4,8 +4,8 @@ import { AUTH, AUTH_URL } from "../constants/constants";
 import { useNavigate } from "react-router-dom";
 
 export const useSignup = () => {
-    const [signupError, setSignupError] = useState(null);
-    const [signupIsLoading, setSignupIsLoading] = useState(null);
+    const [signupError, setSignupError] = useState("");
+    const [signupIsLoading, setSignupIsLoading] = useState(false);
     const { authDispatch } = useAuthContext();
     const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ export const useSignup = () => {
 
         if (!response.ok) {
             setSignupIsLoading(false);
-            setSignupError(json.error);
+            setSignupError(json.message);
         }
         if (response.ok) {
             // save the user to local storage
