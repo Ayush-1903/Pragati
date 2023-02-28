@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
-import { AUTH } from "../constants/constants";
+import { AUTH, AUTH_URL } from "../constants/constants";
 import { useNavigate } from "react-router-dom";
 
 export const useSignup = () => {
@@ -13,7 +13,7 @@ export const useSignup = () => {
         setSignupIsLoading(true);
         setSignupError(null);
 
-        const response = await fetch("/user/signup", {
+        const response = await fetch(`${AUTH_URL}/user/signup`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ firstName, lastName, email, password, isSchoolStudent }),

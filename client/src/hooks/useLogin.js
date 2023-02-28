@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AUTH } from "../constants/constants";
+import { AUTH, AUTH_URL } from "../constants/constants";
 import { useAuthContext } from "./useAuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +13,7 @@ export const useLogin = () => {
         setLoginIsLoading(true);
         setLoginError(null);
 
-        const response = await fetch("/user/login", {
+        const response = await fetch(`${AUTH_URL}/user/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password }),
