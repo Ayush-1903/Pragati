@@ -72,7 +72,7 @@ const Sidebar = () => {
 
                         <li className="nav-link">
                             <a className="active" onClick={() => setActive("Nav")}>
-                                <i class='bx bx-home icon'></i>
+                                <i className='bx bx-home icon'></i>
                                 <span className="text nav-text">Home</span>
                             </a>
                         </li>
