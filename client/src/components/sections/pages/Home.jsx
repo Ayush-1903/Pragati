@@ -1,7 +1,7 @@
 import React from 'react'
-import Project from '../images/Organizing projects-cuate.svg';  
 import { NavLink } from 'react-router-dom';
-import HomeWrapper from './style/Home.style';
+import HomeWrapper from '../style/Home.style';
+import Video from '../images/video1.mp4';
 
 export const Home = () => {
   return (
@@ -18,7 +18,7 @@ export const Home = () => {
                         <div className="col-lg-12">
                             <h6>We help in your pragati</h6>
                             <h2>Organize All Your Websites In One Place. </h2>
-                            <p>Create clear, multi-functional to-do lists to easily manage your ideas and work from anywhere so you never forget anything again.</p>
+                            <p>Pragati is a comprehensive educational platform that brings together all the resources that you need to succeed.</p>
                         </div>
                         <div className="col-lg-12">
                             <div className="border-first-button scroll-to-section">
@@ -29,9 +29,11 @@ export const Home = () => {
                     </div>
                     </div>
                     <div className="col-lg-6" data-aos="fade-left" data-aos-duration="900">
-                    <div className="right-image">
-                        <img src={Project} alt=""></img>
-                    </div>
+                        <div className="right-image">
+                            <video autoPlay loop muted>
+                                <source src={Video} type='video/mp4'/>
+                            </video>
+                        </div>
                     </div>
                 </div>
                 </div>

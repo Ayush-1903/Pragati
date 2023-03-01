@@ -47,9 +47,9 @@ const Nav = () => {
                     </li>
                     <li className="active-link"><a onClick={() => setActive("MainTile")}>DSA Practice</a></li>
                     <li><a onClick={() => setActive("PlacementTile")}>Internship/Placement</a></li>
-                    <li><a onClick={() => setActive("FreelanceTile")} >Freelancing</a></li>
                     <li><a onClick={() => setActive("StudyTile")} >Higher Study</a></li>
                     <li><a onClick={() => setActive("InterviewTile")} >Interview</a></li>
+                    <li><a onClick={() => setActive("FreelanceTile")} >Freelancing</a></li>
                 </ul>
             </div>
             {active === "MainTile" && <Tiles title="Practice DSA" data={PracticeData} lowertitle="DSA YouTube Channels" lowerdata={PracticeYT}/>}

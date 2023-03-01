@@ -1,7 +1,7 @@
 import React from 'react';
 import topRight from '../images/contact-top-right-v3.png';
 import ContactPage from '../images/Contact.svg';
-import ContactWrapper from './style/Contact.style';
+import ContactWrapper from '../style/Contact.style';
 
 const Contact = () => {
   return (

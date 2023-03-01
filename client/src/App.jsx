@@ -1,13 +1,12 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
-import Auth from "./components/Auth";
-import Services from "./components/Services";
-import Navbar from "./components/Navbar";
-import Category from "./components/Category";
+import Home from "./components/sections/pages/Home";
+import About from "./components/sections/pages/About";
+import Auth from "./components/sections/pages/Auth";
+import Services from "./components/sections/pages/Services";
+import Navbar from "./components/sections/pages/Navbar";
 import Sidebar from "./components/dashboard/Sidebar/Sidebar";
-import Contact from "./components/Contact";
+import Contact from "./components/sections/pages/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
                 <Route path="/about" element={[<Navbar />, <About />]} />
                 <Route path="/services" element={[<Navbar />, <Services />]} />
                 <Route path="/contact" element={[<Navbar />, <Contact />]} />
-                <Route path="/category" element={<Category />} />
                 <Route path="/dashboard" element={<Sidebar />}></Route>
             </Routes>
         </BrowserRouter>

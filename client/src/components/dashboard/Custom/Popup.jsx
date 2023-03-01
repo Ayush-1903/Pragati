@@ -35,7 +35,7 @@ const Popup = (props) => {
               <div className='input-data'>
                 <input name="title" type="text" onChange={handleChange} value={tile.title} required/>
                 <div className='underline'></div>
-                <label>Title</label>
+                <label>Enter Title</label>
               </div>
               <div className='input-data url'>
                 <input name="url" type="url" onChange={handleChange} value={tile.url} required/>

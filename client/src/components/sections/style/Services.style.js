@@ -11,9 +11,20 @@ const ServiceWrapper = styled.div`
     .container h1{
         text-align: center;
         padding-top: 12%;
-        margin-bottom: 60px;
+        margin-bottom: 20px;
         font-weight: 600;
         position: relative;
+    }
+
+    .container h6{
+        position: relative;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+
+    .container .wink{
+        max-width: 21px;
     }
 
     .container h1::after{
@@ -40,13 +51,14 @@ const ServiceWrapper = styled.div`
         border-radius: 5px;
         font-size: 14px;
         border-radius: 10px;
-        background: #fff;
+        background: #FFFFFF;
         box-shadow: 0 10px 25px 0 rgba(68, 88, 144, 0.1);
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        cursor: default;
     }
 
-    .service img{
-        max-width: 60px;
+    .service video{
+        max-width: 330px;
         margin-bottom: 10px;
         color: #303ed7;
     }
@@ -61,9 +73,13 @@ const ServiceWrapper = styled.div`
         -webkit-background-clip:text;
     }
 
+    .service p{
+        font-weight: 500;
+    }
+
     .service:hover {
-        -webkit-transform: scale(1.05);
-        transform: scale(1.05);
+        -webkit-transform: scale(1.28);
+        transform: scale(1.28);
         box-shadow: 0 3px 10px 0 rgb(154, 200, 253);
     }
 

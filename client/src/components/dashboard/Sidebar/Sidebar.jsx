@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import '../Dashboard.scss';
-import logo from '../../../images/logo2.svg';
+import logo from '../images/logo2.svg';
 import Nav from '../Nav/Nav';
 import CollegeTodo from '../todo/CollegeTodo';
 import CustomTile from '../Custom/CustomTile';

@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import logo from '../images/Untitled-1.svg';
 import logo from '../images/Logo.svg';
-import NavWrapper from './style/Nav.style';
+import NavWrapper from '../style/Nav.style';
 
 export const Navbar = () => {
 
@@ -20,7 +19,7 @@ export const Navbar = () => {
                     <ul className="nav">
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
-                    <li><NavLink to="/services">Services</NavLink></li>
+                    <li><NavLink to="/services">Features</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li> 
                     <li><div className="border-first-button"><NavLink to="/auth">Sign Up</NavLink></div>
                     </li> 

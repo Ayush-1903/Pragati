@@ -2,8 +2,8 @@ import React from 'react'
 import AboutUs from '../images/About us page-amico.svg';
 import task from '../images/tasks.png';
 import web from '../images/websites.png';
-import chat from '../images/chat.png';
-import AboutWrapper from './style/About.style';
+import add from '../images/add.png';
+import AboutWrapper from '../style/About.style';
 
 export const About = () => {
   return (
@@ -26,13 +26,13 @@ export const About = () => {
                         <h4>Who We <em>Are</em></h4>
                         <div className="line-dec"></div>
                         </div>
-                        <p>Pragati is a flexible work management tool where you can find all the websites required for your growth, learnings and add you custom websites and have acces to all websites in one place. </p>
+                        <p>Pragati is a comprehensive educational platform that brings together all the resources that you need to succeed. With features like learning resources, a to-do list, and a bookmark system, Pragati makes it easier for students to stay organized and motivated.</p>
                         <div className="row">
                         <div className="col-lg-4 col-sm-4" data-aos="zoom-in" data-aos-delay="300">
                             <div className="info-post">
                             <div className="about-icon">
                                 <img src={web} alt=""></img>
-                                <a href="#">Organize</a>
+                                <a>Organize</a>
                                 <br></br>
                                 <span>Organize your favourite and necessary websites.</span>
                             </div>
@@ -42,7 +42,7 @@ export const About = () => {
                             <div className="info-post">
                             <div className="about-icon">
                                 <img src={task} alt=""></img>
-                                <a href="#">Todo List</a>
+                                <a>Todo List</a>
                                 <br></br>
                                 <span>List your important tasks and track them daily.</span>
                             </div>
@@ -51,10 +51,10 @@ export const About = () => {
                         <div className="col-lg-4 col-sm-4" data-aos="zoom-in" data-aos-delay="500">
                             <div className="info-post">
                             <div className="about-icon">
-                                <img src={chat} alt=""></img>
-                                <a href="#">Chat</a>
+                                <img src={add} alt=""></img>
+                                <a>Add Custom Tiles</a>
                                 <br></br>
-                                <span>Work smarter as a team with real-time chat.</span>
+                                <span>Personalize your experience with custom tiles.</span>
                             </div>
                             </div>
                         </div>

@@ -27,7 +27,7 @@ p {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    padding: 226px 0px 0px 0px;
+    padding: 200px 0px 0px 0px;
     position: relative;
     overflow: hidden;
   }
@@ -91,8 +91,8 @@ p {
     z-index: 20;
   }
   
-  .main-banner .right-image img {
-    max-width: 593px;
+  .main-banner .right-image video{
+    max-width: 700px;
   }
 
   .border-first-button a {

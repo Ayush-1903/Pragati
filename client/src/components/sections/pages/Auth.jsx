@@ -1,9 +1,9 @@
 import React, {useState} from 'react';   
-import { useSignup } from '../hooks/useSignup';
-import { useLogin } from '../hooks/useLogin';
-import '../../src/App.css';
+import { useSignup } from '../../../hooks/useSignup';
+import { useLogin } from '../../../hooks/useLogin';
+import '../../../App.css';
 import authImage from '../images/scattered-forcefields.svg';
-import Wrapper from './style/Auth.style';
+import Wrapper from '../style/Auth.style';
 
 const initialState = { 
     firstName: '', 

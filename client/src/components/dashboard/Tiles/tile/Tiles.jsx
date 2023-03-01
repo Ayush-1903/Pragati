@@ -28,6 +28,8 @@ const Tiles = ({ title, data, lowertitle, lowerdata }) => {
                             {data.map((tile) => (
                                 <Tile
                                     img={tile.img}
+                                    icon={tile.icon}
+                                    type={tile.type}
                                     href={tile.href}
                                     title={tile.title}
                                     desc={tile.desc}
@@ -47,6 +49,8 @@ const Tiles = ({ title, data, lowertitle, lowerdata }) => {
                             {lowerdata.map((tile) => (
                                 <Tile
                                     img={tile.img}
+                                    icon={tile.icon}
+                                    type={tile.type}
                                     href={tile.href}
                                     title={tile.title}
                                     desc={tile.desc}

@@ -312,6 +312,7 @@ header .image-text .profession{
 
 .navdash{
     position: relative;
+    top: 0;
     left:  250px;
     width: calc(100% - 250px);
     transition: var(--tran-05);
@@ -458,7 +459,7 @@ main{
 
 .main-greeting > p{
     font-size: 15px;
-    // color: #555656;
+    font-weight: 500;
     color: var(--text-color);
 }
 
@@ -496,6 +497,23 @@ main{
     transform: scale(1.08);
     border: 2px solid rgb(127, 187, 255);
     box-shadow: 0 3px 10px 0 rgb(154, 200, 253);
+}
+
+.type{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.type p{
+    margin-left: 2px;
+    font-size: 0.75rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .favourite .hollow{

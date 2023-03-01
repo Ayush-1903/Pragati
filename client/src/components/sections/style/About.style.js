@@ -71,6 +71,7 @@ p {
     text-align: center;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
     border-radius: 23px;
+    background: #fff;
     padding: 20px 10px;
   }
   
@@ -93,10 +94,6 @@ p {
     font-size: 12px;
     font-weight: 500;
     color: #515151;
-  }
-  
-  .row .about-icon:hover a {
-    color: #4da6e7;
   }
   
   @media (max-width: 1200px) {

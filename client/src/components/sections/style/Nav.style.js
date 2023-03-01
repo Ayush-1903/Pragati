@@ -97,11 +97,15 @@ p {
     font-size: 40px;
   }
 
+  .header-area .main-nav .logo span img{
+    width: 30px;
+  }
+
   .header-area .main-nav .logo .kepr{
     font-family: 'Play', sans-serif;
     font-weight: 800;
     color: #263e63;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .background-header .main-nav .logo {
