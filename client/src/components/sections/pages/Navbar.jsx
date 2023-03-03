@@ -19,7 +19,7 @@ export const Navbar = () => {
                     <ul className="nav">
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
-                    <li><NavLink to="/services">Features</NavLink></li>
+                    <li><NavLink to="/features">Features</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li> 
                     <li><div className="border-first-button"><NavLink to="/auth">Sign Up</NavLink></div>
                     </li> 

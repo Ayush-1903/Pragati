@@ -19,6 +19,7 @@
     --text-color: #1d1c1c;
     --box-color: #fff; 
     --dropdown-color: #ffffff;
+    --flybox-color: rgba(11, 114, 249, 0.4);
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -42,6 +43,7 @@
     --text-color: #f1f0f0;
     --box-color: #252525;
     --dropdown-color: #2f2e2e;
+    --flybox-color: #5100ff9f;
 }
 
 /* ===== Sidebar ===== */
@@ -638,6 +640,7 @@ main{
 }
 
 //Todo List
+
 .clg-todo{
     position: relative;
     width: calc(100% - 250px);
@@ -675,7 +678,7 @@ main{
     max-height: 600px;
 }
 
-.sidebar.close ~ .clg-todo{
+.sidebar.close ~.clg-todo{
     left: 88px;
     width: calc(100% - 88px);
 }
@@ -971,14 +974,274 @@ main{
 
 //Chat
 
-.Chat{
-    position: relative;
-    width: calc(100% - 300px);
-    left: 280px;
+.mainprofile{
     transition: var(--tran-05);
 }
 
-.sidebar.close ~ .Chat{
-    left: 280px;
-    width: calc(100% - 300px);
+.profile{
+    position: relative;
+    width: calc(100% - 250px);
+    left: 250px;
+    display: flex;
+    top: 150px;
+    z-index: 999;
 }
+
+.sidebar.close ~ .mainprofile{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.profile-card {
+    width: 100%;
+    margin: auto;
+    box-shadow: 0px 8px 60px -10px rgba(13,28,39,0.6);
+    background: var(--box-color);
+    border-radius: 12px;
+    max-width: 450px;
+    // max-width: 650px;
+    position: relative;
+
+    &__img {
+        width: 150px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        z-index: 4;
+        box-shadow: 0px 5px 30px 0px rgb(36, 106, 247), 0px 0px 0px 7px rgba(15, 111, 244, 0.5);
+    
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+    
+      }
+      
+      &__cnt {
+        margin-top: -45px;
+        text-align: center;
+        transition: var(--tran-05);
+      }
+
+      &__name {
+        font-weight: 600;
+        font-size: 24px;
+        color: #256ff9;
+        margin-bottom: 15px;
+      }
+    
+      &__txt {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--text-color);
+        margin-bottom: 15px;
+      }
+
+      &-inf {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    
+        &__item {
+          padding: 10px 35px;
+          min-width: 150px;
+    
+          @media screen and (max-width: 768px) {
+            padding: 10px 20px;
+            min-width: 120px;
+          }
+    
+        }
+    
+        &__title {
+          font-weight: 600;
+          font-size: 27px;
+          color: var(--text-color);
+        }
+    
+        &__txt {
+          color : var(--text-color);
+          font-weight: 500;
+          margin-top: 7px;
+        }
+    
+      }
+    
+      &-ctr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    
+        @media screen and (max-width: 576px) {
+          flex-wrap: wrap;
+        }
+    
+      }
+    
+      &__button {
+        background: none;
+        border: none;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        margin: 0px 30px;
+        margin-bottom: 60px;
+        min-width: 201px;
+        border-radius: 50px;
+        min-height: 55px;
+        color: var(--text-color);
+        transition: var(--tran-05);
+
+        @media screen and (min-width: 768px) {
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+    
+        &.button--blue {
+          background: linear-gradient(45deg, #1da1f2, #0e71c8);
+          box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.4);
+    
+          &:hover {
+            box-shadow: 0px 7px 30px rgba(19, 127, 212, 0.75);
+          }
+    
+        }
+    
+        &.button--orange {
+          background: linear-gradient(45deg, #d5135a, #f05924);
+          box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.35);
+    
+          &:hover {
+            box-shadow: 0px 7px 30px rgba(223, 45, 70, 0.75);
+          }
+    
+        }
+    
+      }
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: var(--flybox-color);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 55px;
+    height: 55px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/sections/pages/Home";
 import About from "./components/sections/pages/About";
 import Auth from "./components/sections/pages/Auth";
-import Services from "./components/sections/pages/Services";
+import Features from "./components/sections/pages/Features";
 import Navbar from "./components/sections/pages/Navbar";
 import Sidebar from "./components/dashboard/Sidebar/Sidebar";
 import Contact from "./components/sections/pages/Contact";
@@ -19,7 +19,7 @@ function App() {
                 <Route path="/" element={[<Navbar />, <Home />]} />
                 <Route path="auth" element={<Auth />} />
                 <Route path="/about" element={[<Navbar />, <About />]} />
-                <Route path="/services" element={[<Navbar />, <Services />]} />
+                <Route path="/features" element={[<Navbar />, <Features />]} />
                 <Route path="/contact" element={[<Navbar />, <Contact />]} />
                 <Route path="/dashboard" element={<Sidebar />}></Route>
             </Routes>

@@ -42,18 +42,18 @@ const CollegeTodo = () => {
     };
 
     return (
-      <div className='clg-todo'>
-          <div className='CollegeTodo todo-app' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-              <h1>What's the Plan for Today?</h1>
-              <TodoForm onSubmit={addTodo} />
-              <Todo
-                  todos={todos}
-                  completeTodo={completeTodo}
-                  removeTodo={removeTodo}
-                  updateTodo={updateTodo}
-              />
-          </div>
-      </div>
+        <div className='clg-todo'>
+            <div className='CollegeTodo todo-app' data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <h1>What's the Plan for Today?</h1>
+                <TodoForm onSubmit={addTodo} />
+                <Todo
+                    todos={todos}
+                    completeTodo={completeTodo}
+                    removeTodo={removeTodo}
+                    updateTodo={updateTodo}
+                />
+            </div>
+        </div>
     )
 }
 

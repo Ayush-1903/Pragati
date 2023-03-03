@@ -3,7 +3,7 @@ import dark from '../images/Dark.mp4';
 import custom from '../images/Custom.mp4';
 import todo from '../images/Todo.mp4';
 import wink from '../images/wink.png';
-import ServiceWrapper from '../style/Services.style';
+import ServiceWrapper from '../style/Features.style';
 
 const Services = () => {
 
@@ -42,4 +42,4 @@ const Services = () => {
     )
 }
 
-export default Services
+export default Services;
