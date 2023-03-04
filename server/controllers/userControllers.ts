@@ -1,13 +1,23 @@
+import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import validator from "validator";
 import { UserModel } from "../models/userModel.js";
 
-const createToken = (_id, email) => {
+type ReqResType = {
+    req: Request;
+    res: Response;
+};
+type CreateTokenType = {
+    _id: string;
+    email: string;
+};
+
+const createToken = ({ _id, email }: CreateTokenType) => {
     return jwt.sign({ _id, email }, process.env.SECRET_STRING, { expiresIn: "1d" });
 };
 
-export const signup = async (req, res) => {
+export const signup = async ({ req, res }: ReqResType) => {
     const { firstName, lastName, email, password, isSchoolStudent } = req.body;
 
     try {
@@ -38,16 +48,16 @@ export const signup = async (req, res) => {
             name: `${firstName} ${lastName}`,
         });
 
-        const token = createToken(user._id, user.email);
+        const token = createToken({ _id: user._id.toString(), email: user.email });
 
         res.status(200).json({ user, token });
-    } catch (err) {
+    } catch (err: any) {
         res.status(400).json({ message: err.message });
         console.log(err);
     }
 };
 
-export const login = async (req, res) => {
+export const login = async ({ req, res }: ReqResType) => {
     const { email, password } = req.body;
 
     try {
@@ -61,7 +71,7 @@ export const login = async (req, res) => {
             return res.status(400).json({ message: "Incorrect Password" });
         }
 
-        const token = createToken(user._id, user.email);
+        const token = createToken({ _id: user._id.toString(), email: user.email });
 
         res.status(200).json({ user, token });
     } catch (err) {
