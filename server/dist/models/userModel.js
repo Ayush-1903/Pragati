@@ -6,6 +6,8 @@ const userSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true, unique: true },
+    resetPasswordToken: { type: String },
+    resetPasswordTokenExpiresIn: { type: Date },
     isSchoolStudent: { type: Boolean, required: true },
 });
 exports.UserModel = (0, mongoose_1.model)("User", userSchema);

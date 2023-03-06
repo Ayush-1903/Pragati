@@ -12,14 +12,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.login = exports.signup = void 0;
+exports.resetPassword = exports.forgotPassword = exports.login = exports.signup = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const validator_1 = __importDefault(require("validator"));
+const mailgun_js_1 = __importDefault(require("mailgun-js"));
 const userModel_js_1 = require("../models/userModel.js");
+// ======================
 const createToken = ({ _id, email }) => {
     return jsonwebtoken_1.default.sign({ _id, email }, process.env.SECRET_STRING, { expiresIn: "1d" });
 };
+const mailgun = () => {
+    const config = {
+        apiKey: process.env.MAILGUN_API_KEY,
+        domain: process.env.MAILGUN_DOMAIN,
+    };
+    return new mailgun_js_1.default(config);
+};
+// =======================
 const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { firstName, lastName, email, password, isSchoolStudent } = req.body;
     try {
@@ -74,3 +84,83 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.login = login;
+const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email } = req.body;
+    try {
+        const user = yield userModel_js_1.UserModel.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ message: "user ka astitva nahi" });
+        }
+        const resetToken = jsonwebtoken_1.default.sign({ _id: user._id }, process.env.SECRET_STRING, {
+            expiresIn: "30m",
+        });
+        const encodedResetToken = encodeURIComponent(resetToken.replace(/\./g, "%2E"));
+        user.resetPasswordToken = resetToken;
+        user.resetPasswordTokenExpiresIn = new Date(Date.now() + 3600000);
+        yield user.save();
+        const emailInfo = {
+            from: process.env.SMTP_USERNAME,
+            to: email,
+            subject: "Password Reset Link",
+            html: `
+              <h2>Please click on the following link to reset your password:</h2>
+              <p>${process.env.CLIENT_URL}/auth/reset-password/${encodedResetToken}</p>
+          `,
+        };
+        mailgun()
+            .messages()
+            .send(emailInfo, (err, body) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).send({ message: "Something went wrong while sending email" });
+            }
+            else {
+                console.log("message sent!");
+                return res.status(200).send({ message: "Email sent successfully" });
+            }
+        });
+    }
+    catch (err) {
+        res.status(400).json({ message: err.message });
+        console.log(err);
+    }
+});
+exports.forgotPassword = forgotPassword;
+const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { newPassword, encodedResetToken } = req.body;
+    if (encodedResetToken) {
+        try {
+            const decodedToken = decodeURIComponent(encodedResetToken.replace(/%2E/g, "."));
+            const decodedData = jsonwebtoken_1.default.verify(decodedToken, process.env.SECRET_STRING);
+            const user = yield userModel_js_1.UserModel.findOne({
+                _id: decodedData._id,
+                resetPasswordToken: decodedToken,
+            });
+            if (!user) {
+                return res.status(400).json({ message: "Invalid Token or Token Expired" });
+            }
+            if (user.resetPasswordTokenExpiresIn &&
+                user.resetPasswordTokenExpiresIn.getTime() < Date.now()) {
+                const newToken = jsonwebtoken_1.default.sign({ _id: user._id }, process.env.SECRET_STRING, {
+                    expiresIn: "30m",
+                });
+                user.resetPasswordToken = newToken;
+                user.resetPasswordTokenExpiresIn = new Date(Date.now() + 3600000);
+                yield user.save();
+            }
+            const salt = yield bcryptjs_1.default.genSalt(10);
+            const hashedPassword = yield bcryptjs_1.default.hash(newPassword, salt);
+            user.password = hashedPassword;
+            user.resetPasswordToken = "";
+            yield user.save();
+            return res.status(200).json({ message: "Password Reset Successful" });
+        }
+        catch (err) {
+            return res.status(400).json({ message: err.message });
+        }
+    }
+    else {
+        return res.status(400).json({ message: "Something went wrong" });
+    }
+});
+exports.resetPassword = resetPassword;

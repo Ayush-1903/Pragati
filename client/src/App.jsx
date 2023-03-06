@@ -7,24 +7,28 @@ import Features from "./components/sections/pages/Features";
 import Navbar from "./components/sections/pages/Navbar";
 import Sidebar from "./components/dashboard/Sidebar/Sidebar";
 import Contact from "./components/sections/pages/Contact";
+import ForgotPassword from "./components/sections/pages/ForgotPassword";
+import ResetPassword from "./components/sections/pages/ResetPassword";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
-    const { state } = useAuthContext();
+  const { state } = useAuthContext();
 
-    return (
-        <BrowserRouter>
-            <Routes>
-                {/* <Route path="/" element={<Navigate to='/home' />}/> */}
-                <Route path="/" element={[<Navbar />, <Home />]} />
-                <Route path="auth" element={<Auth />} />
-                <Route path="/about" element={[<Navbar />, <About />]} />
-                <Route path="/features" element={[<Navbar />, <Features />]} />
-                <Route path="/contact" element={[<Navbar />, <Contact />]} />
-                <Route path="/dashboard" element={<Sidebar />}></Route>
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* <Route path="/" element={<Navigate to='/home' />}/> */}
+        <Route path="/" element={[<Navbar />, <Home />]} />
+        <Route path="auth/reset-password/:token" element={<ResetPassword />} />
+        <Route path="auth/forgot-password" element={<ForgotPassword />} />
+        <Route path="auth" element={<Auth />} />
+        <Route path="/about" element={[<Navbar />, <About />]} />
+        <Route path="/features" element={[<Navbar />, <Features />]} />
+        <Route path="/contact" element={[<Navbar />, <Contact />]} />
+        <Route path="/dashboard" element={<Sidebar />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
