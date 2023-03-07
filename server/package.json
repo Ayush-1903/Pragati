@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dekho": "nodemon dist/server.js",
+    "start": "node dist/server.js",
     "dev": "nodemon server.ts",
     "build": "rimraf dist && tsc"
   },
