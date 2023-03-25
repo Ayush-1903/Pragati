@@ -26,11 +26,11 @@ const Fav = () => {
         <div className='custom-tiles'>
             <section id="services" className="section-bg">
                 <div className="front-container">
-                    <header className="section-header" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
-                        <h3>Your Custom Tiles</h3>
+                    <header className="section-header" data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">
+                        <h3>Your Custom Tiles</h3>  
                         <div className="divider-line"></div>
                     </header>
-                    <div className="main-box custom-a" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+                    <div className="main-box custom-a" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
                         <a onClick={() => setButtonPopup(true)} style={{textDecoration : "none"}}>
                             <div className="box custom-container">
                                 <div className="icon"><i class='bx bx-plus add-icon'></i></div>

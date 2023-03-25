@@ -1,0 +1,85 @@
+.wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.618);
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	background-color: var(--todo-color);
+	max-width: 500px;
+	width: 90%;
+	height: 50%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	border-radius: 8px;
+	position: relative;
+}
+
+.closeButton {
+	position: absolute;
+	top: -10px;
+	right: 0;
+	transform: translateY(-100%);
+	font-size: 1.1rem;
+	padding: 0.4rem;
+	border-radius: 4px;
+	background-color: var(--sidebar-color);
+	color: var(--text-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: 0.3s ease all;
+	z-index: -1;
+	&:hover {
+		background-color: rgb(56, 145, 247);
+		color: white;
+	}
+}
+
+.formTitle {
+	color: var(--todo-text);
+	font-size: 1.4rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	text-transform: capitalize;
+}
+
+.form {
+	width: 100%;
+	label {
+		font-size: 1.1rem;
+		color: var(--todo-text);
+		width: 100%;	
+		input,
+		select {
+			color: var(--text-color);
+			margin-top: 0.5rem;
+			margin-bottom: 1.5rem;
+			width: 100%;
+			padding: 0.4rem;
+			border: none;
+			border-radius: 6px;
+			font-size: 1rem;
+			background-color: var(--todo-checkbox);
+		}
+	}
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 1.5rem;
+	gap: 1rem;
+}

@@ -23,6 +23,8 @@ const Nav = () => {
 
     const [active, setActive] = useState("MainTile");
 
+    const [mobileMenu, setMobileMenu] = useState(false);
+
     const navLink = document.querySelectorAll("li");
 
     navLink.forEach(element => {
@@ -36,7 +38,7 @@ const Nav = () => {
     return (
         <div className="navdash">
             <div className="navleft">
-                <ul>
+                <ul className= {mobileMenu ? "mobile-nav" : "nav"}>
                     <li><a>Learn <i className="fa fa-solid fa-caret-down"></i></a>
                         <ul className="drop-link">
                             <li className="sub-link"><a onClick={() => setActive("APTITile")}>Aptitude</a></li>
@@ -51,7 +53,18 @@ const Nav = () => {
                     <li><a onClick={() => setActive("InterviewTile")} >Interview</a></li>
                     <li><a onClick={() => setActive("FreelanceTile")} >Freelancing</a></li>
                 </ul>
+
+                <button className='menu-trigger' onClick={() => setMobileMenu(!mobileMenu)}>    
+                    {mobileMenu ? (
+                        <i class='bx bx-x-circle'></i>
+                        ) : ( 
+                        <i class='bx bx-menu'></i>
+                        )
+                    }
+                </button>
+
             </div>
+
             {active === "MainTile" && <Tiles title="Practice DSA" data={PracticeData} lowertitle="DSA YouTube Channels" lowerdata={PracticeYT}/>}
             {active === "DSATile" && <Tiles title= "Data Structures and Algorithms (DSA)" data={DSAData} lowertitle="DSA YouTube Channels" lowerdata={DSAYTData}/>}
             {active === "WEBTile" && <Tiles title= "Web Development" data={WebData} lowertitle="Web Development YouTube Channels" lowerdata={WebYTData}/>}

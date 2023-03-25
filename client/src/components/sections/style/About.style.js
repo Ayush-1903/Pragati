@@ -1,31 +1,6 @@
 import styled from 'styled-components';
 
 const AboutWrapper = styled.div`
-#about {
-    padding-top: 100px;
-  }
-
-  
-a {
-  text-decoration: none !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-p {
-  font-size: 15px;
-  line-height: 30px;
-  font-weight: 300;
-  color: #afafaf;
-}
-
-  .section-heading {
-    position: relative;
-    z-index: 2;
-  }
   
   .section-heading h6 {
     font-size: 15px;
@@ -50,10 +25,9 @@ p {
   
   .section-heading .line-dec {
     width: 200px;
-    height: 2px;
+    height: 3px;
     background-color: #4da6e7;
   }
-  
   
   .about-left-image img {
     margin-right: 45px;
@@ -64,6 +38,7 @@ p {
     margin-top: 30px;
     margin-bottom: 45px;
     color: #898989;
+    text-align: justify; 
     font-weight: 500;
   }
   
@@ -96,172 +71,58 @@ p {
     color: #515151;
   }
   
-  @media (max-width: 1200px) {
-    .header-area .main-nav .logo h4 {
-      font-size: 24px;
-      z-index: 999;
-    }
-    .header-area .main-nav .logo h4 img {
-      max-width: 25px;
-      margin-left: 0px;
-      z-index: 999;
-    }
-    .header-area .main-nav .nav li:last-child {
-      padding-left: 20px;
+  @media only screen and (max-width: 1403px){
+    .container{
+      padding-top: 40px;
     }
   }
   
   @media (max-width: 992px) {
-    form#contact {
-      overflow: hidden;
-    }
-    .header-area .main-nav .logo h4 {
-      font-size: 20px;
-      z-index: 999;
-    }
-    .main-banner .left-content {
-      margin-right: 0px;
-    }
-    .main-banner {
-      text-align: center;
-      padding: 226px 0px 30px 0px;
-    }
-    .main-banner:before {
-      display: none;
-    }
-    .main-banner .right-image {
-      margin: 30px auto 0px auto;
-      text-align: center;
-    }
-    .features-item {
-      margin-bottom: 45px;
-    }
-    .last-features-item,
-    .last-skill-item {
-      margin-bottom: 0px !important;
-    }
-    .skill-item {
-      margin-bottom: 30px;
-    }
+
     .about-left-image img {
       margin-right: 0px;
       margin-bottom: 45px;;
     }
-    .services .naccs .menu div {
-      font-size: 15px;
-      font-weight: 500;
-    }
-    .service-item {
+
+    .section-heading{
       text-align: center;
     }
-    .service-item .icon {
-      margin-top: 0px;
-      margin-bottom: 30px;
+
+    .section-heading .line-dec{
+      margin-left: 36%;
     }
-    .about-us .left-image {
-      margin-right: 30px;
-      margin-left: 30px;
-      margin-bottom: 45px;
-    }
-    .blog-posts {
-      margin-left: 0px;
-      margin-top: 30px;
-    }
-    .post-item {
-      margin-bottom: 70px;
-    }
-    .our-portfolio .owl-nav {
-      display: none !important;
-    }
-    .contact-info {
-      margin-top: 60px;
-    }
-    form#contact {
-      padding: 45px;
+    
+  }
+
+  @media (max-width: 769px){
+    .section-heading .line-dec{
+      margin-left: 31%;
     }
   }
   
-  @media (max-width: 767px) {
-    .header-area .main-nav .logo h4 {
-      font-size: 30px;
-      z-index: 999;
+  @media (max-width: 576px){
+
+    .section-heading .line-dec{
+      margin-left: 31%;
     }
-    .header-area .main-nav .logo h4 img {
-      max-width: 30px;
-      margin-left: 5px;
-      z-index: 999;
+
+    .info-post{
+      padding: 20px;
     }
-    .main-banner .info-stat {
-      margin-bottom: 15px;
+  }
+
+  @media (max-width: 426px){
+    .section-heading .line-dec{
+      width: 100px;
+      margin-left: 37%;
     }
-    .service-item {
-      text-align: center;
-      padding: 30px;
+
+    .about-right-content p{
+      font-size: 12px;
     }
-    .service-item .icon {
-      float: none;
-      margin-right: 0px;
-      margin-bottom: 15px;
-    }
-    .service-item .right-content {
-      display: inline-block;
-    }
-    .services .naccs .menu div .thumb {
-      padding: 5px;
-    }
-    .services .icon img {
-      margin: 0px;
-    }
-    .services ul.nacc li.active {
-      padding: 45px;
-    }
-    .services .naccs .menu div  {
-      font-size: 0px;
-    }
-    .services ul.nacc li .right-image img {
-      float: none;
-    }
-    .our-portfolio .section-heading,
-    .about-us .section-heading,
-    .about-us .about-item,
-    .about-us p,
-    .about-us .main-green-button {
-      text-align: center;
-    }
-    .our-portfolio .section-heading .line-dec {
-      margin: 0 auto;
-    }
-    .our-services .section-heading {
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-    .free-quote form input {
-      margin-left: 0px;
-      padding: 0px 30px;
-    }
-    .free-quote form button {
-      margin-left: 0px;
-      border-bottom-left-radius: 40px;
-      border-top-right-radius: 0px;
-    }
-    .blog-posts {
-      margin-left: 0px;
-      margin-top: 30px;
-    }
-    .post-item {
-      margin-bottom: 30px;
-    }
-    .post-item .thumb img {
-      max-width: 140px;
-    }
-    .post-item .right-content p {
-      display: none;
-    }
-    .about-us .about-item {
-      margin-top: 15px;
-    }
-    form#contact {
-      padding: 30px;
+
+    .section-heading h4{
+      font-size: 25px;
     }
   }
   

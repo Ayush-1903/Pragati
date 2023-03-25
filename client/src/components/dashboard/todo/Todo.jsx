@@ -1,46 +1,30 @@
-import React, { useState } from 'react';
-import TodoForm from './TodoForm';
-import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
+import React from 'react';
+import { Toaster } from 'react-hot-toast';
+import Header from './components/Header';
+import Lists from './components/Lists';
+import PageTitle from './components/Title';
+import styles from './styles/modules/app.module.scss';
 
-const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
-    const [edit, setEdit] = useState({
-        id: null,
-        value: ''
-      });
-    
-      const submitUpdate = value => {
-        updateTodo(edit.id, value);
-        setEdit({
-          id: null,
-          value: ''
-        });
-      };
-    
-      if (edit.id) {
-        return <TodoForm edit={edit} onSubmit={submitUpdate} />;
-      }
-
-    return todos.map((todo, index) => (
-        <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
-      key={index}
-    >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
+const Todo = () => {
+  return (
+    <>
+      <div className='todo'>
+        <PageTitle data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">Todo List</PageTitle>
+        <div className={styles.app__wrapper} data-aos="fade-up"data-aos-duration="500" data-aos-delay="100">
+          <Header />
+          <Lists />
+        </div>
       </div>
-      <div className='icons'>
-        <RiCloseCircleLine
-          onClick={() => removeTodo(todo.id)}
-          className='delete-icon'
-        />
-        <TiEdit
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className='edit-icon'
-        />
-      </div>
-    </div>
-    ));
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            fontSize: '1rem',
+          },
+        }}
+      />  
+    </>
+  )
 }
 
 export default Todo

@@ -1,0 +1,25 @@
+@import '../mixins';
+.title {
+	display: inline-block;
+	width: 100%;
+	font-size: 2.4rem;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+    color: var(--text-color);
+	@include smallDeviceSize {
+		font-size: 1.5rem;
+	}
+}
+
+.todoline {
+    margin: auto;
+    width: 50%;
+    width: 180px;
+    margin-top: 10px;
+    height: 3.5px;
+    border-radius: 40px;
+    background-color: rgb(56, 145, 247);
+}

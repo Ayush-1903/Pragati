@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ContactWrapper = styled.div`
     .contact-us {
-        padding-top: 120px;
+        padding-top: 40px;
     }
 
     .contact-us .section-heading .line-dec {
@@ -16,7 +16,6 @@ const ContactWrapper = styled.div`
 
     .section-heading {
         position: relative;
-        z-index: 2;
     }
       
     .section-heading h4 {
@@ -145,6 +144,12 @@ const ContactWrapper = styled.div`
     form#contact button:hover {
         background-color: #4da6e7!important;
         color: #fff!important;
+    }
+
+    @media only screen and (max-width: 426px) {
+        .section-heading h4{
+            font-size: 24px;
+        }
     }
 `
 

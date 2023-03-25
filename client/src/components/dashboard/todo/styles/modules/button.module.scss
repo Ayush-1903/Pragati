@@ -1,0 +1,28 @@
+.button {
+	display: inline-block;
+	height: auto;
+	padding: 0.6rem 1.6rem;
+	border: none;
+	border-radius: 6px;
+	font-weight: 500;
+	font-size: 1rem;
+	text-decoration: none;
+	cursor: pointer;
+	overflow: hidden;
+	&__select {
+		color: var(--todo-text);
+		padding: 0.6rem;
+		border: none;
+		background-color: var(--todo-option-color);
+		width: 140px;
+		cursor: pointer;
+	}
+}
+.button--primary {
+	background-color: var(--primary-color);
+	color: var(--todo-button-color);
+}
+.button--secondary {
+	background-color: var(--todo-option-color);
+	color: var(--todo-text);
+}

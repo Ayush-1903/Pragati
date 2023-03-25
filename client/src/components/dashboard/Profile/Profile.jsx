@@ -25,11 +25,6 @@ const Profile = () => {
                   <div class="profile-card-inf__txt">Custom Tiles</div>
                 </div>
 
-                {/* <div class="profile-card-inf__item">
-                  <div class="profile-card-inf__title">123</div>
-                  <div class="profile-card-inf__txt">Articles</div>
-                </div> */}
-
               </div>
 
               <div class="profile-card-ctr">
@@ -55,7 +50,6 @@ const Profile = () => {
             </ul>
         </div >
       </div>
-      
   )
 }
 

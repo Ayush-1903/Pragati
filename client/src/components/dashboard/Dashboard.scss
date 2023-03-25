@@ -1,13 +1,5 @@
 /* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-//Sidebar
 
 :root{
     /* ===== Colors ===== */
@@ -20,6 +12,17 @@
     --box-color: #fff; 
     --dropdown-color: #ffffff;
     --flybox-color: rgba(11, 114, 249, 0.4);
+
+    // Todo Colors
+    --todo-color: #ECEDF6;  
+    --todo-text: #4f5167;
+    --todo-option-color: #CCCDDE;
+    --todo-button-color: #FFF;
+    --todo-list-bg: #F6F5FF;
+    --todo-bg: #dcdcec;
+    --todo-icon-hover: #c0c0cf;
+    --checkbox-color: rgb(56, 145, 247);
+    --todo-checkbox: #ffffff;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -35,6 +38,7 @@
 }
 
 .sidebar-main.dark{
+    // Colors
     --body-color: #171717;
     --sidebar-color: #252525;
     --primary-color: #454546;
@@ -43,27 +47,35 @@
     --text-color: #f1f0f0;
     --box-color: #252525;
     --dropdown-color: #2f2e2e;
-    --flybox-color: #5100ff9f;
+    --flybox-color: #256ff9;
+
+    // Todo Colors
+    --todo-text: #f1f0f0;
+    --todo-option-color: #454546;
+    --todo-bg: #252525;
+    --todo-color: #252525;  
+    --todo-list-bg: #454546;
+    --checkbox-color: #252525;
+    --todo-checkbox: #454546;
 }
 
-/* ===== Sidebar ===== */
- .sidebar{
+.sidebar{
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px;
-    padding: 10px 14px;
+    width: 250px;   
+    padding: 10px 14px; 
     background: var(--sidebar-color);
     transition: var(--tran-05);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 100;  
 }
+
 .sidebar.close{
     width: 88px;
 }
 
-/* ===== Reusable code - Here ===== */
 .sidebar li{
     height: 50px;
     list-style: none;
@@ -75,7 +87,6 @@
 .sidebar header .image,
 .sidebar .icon{
     min-width: 60px;
-    border-radius: 6px;
 }
 
 .sidebar .icon{
@@ -100,10 +111,10 @@
     white-space: nowrap;
     opacity: 1;
 }
+
 .sidebar.close .text{
     opacity: 0;
 }
-/* =========================== */
 
 .sidebar header{
     position: relative;
@@ -113,10 +124,12 @@
     display: flex;
     align-items: center;
 }
+
 .sidebar header .logo-text{
     display: flex;
     flex-direction: column;
 }
+
 header .image-text .name {
     margin-top: 2px;
     font-size: 18px;
@@ -124,7 +137,7 @@ header .image-text .name {
 }
 
 header .image-text .profession{
-    font-size: 16px;
+    font-size: 15px;
     margin-top: -2px;
     display: block;
 }
@@ -133,6 +146,7 @@ header .image-text .profession{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--tran-05);
 }
 
 .sidebar header .image img{
@@ -197,7 +211,6 @@ header .image-text .profession{
 .sidebar-main .sidebar li a{
     display: none;
     list-style: none;
-    height: 100%;
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -399,7 +412,6 @@ ul .active-link{
     transition: all 0.2s;
     background-color: rgb(56, 145, 247);
     color: rgb(255, 255, 255);
-    // color: var(--text-color);
 }
 
 .navleft ul .drop-link li:hover:nth-child(1){
@@ -414,16 +426,18 @@ ul .active-link{
     color: var(--text-color);
     display: none;
 }
+
+.menu-trigger {
+    display: none;
+}
+
 //Tiles
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 main{
     position: relative;
-    // background: #f5f9ff;
     grid-area: main;
-    // width: calc(100% - 250px);
-    // left:  250px;
     overflow-y: auto;
     font-family: 'Poppins', sans-serif;
     transition: var(--tran-05);
@@ -482,14 +496,13 @@ main{
     flex-direction: column;
     justify-content: space-around;
     padding: 20px;
-    height: 80%;
+    height: 80%;    
     border: 2px solid transparent;
     border-radius: 10px;
     text-align: center;
     text-decoration: none;
     margin: 0 10px 40px 10px;
     background: var(--box-color);
-    // background: #fff;
     box-shadow: 0 10px 25px 0 rgba(68, 88, 144, 0.1);
     transition: var(--tran-05);
 }
@@ -571,7 +584,6 @@ main{
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
-    // color: black;
     color: var(--text-color);
     font-size: 20px;
     transition: all 0.3s ease-in-out;
@@ -587,7 +599,6 @@ main{
 }
 
 #services .description {
-    // color: rgb(80, 80, 80);
     color: var(--text-color);
     font-family: 'Roboto', sans-serif;
     font-size: 13px;
@@ -603,7 +614,6 @@ main{
 
 .section-header h3 {
     font-size: 36px;
-    // color: #3f3b61;
     color: var(--text-color);
     text-align: center;
     font-weight: 700;
@@ -620,169 +630,23 @@ main{
     height: 3px;
     border-radius: 40px;
     background-color: rgb(56, 145, 247);
-  }
-
-  
-@media only screen and (max-width : 855px) {
-    #services .front-row {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-bottom: 0;
-    }
 }
 
-@media only screen and (max-width : 505px) {
-    #services .front-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        margin-bottom: 0;
-    }
-}
 
 //Todo List
 
-.clg-todo{
+.todo{
     position: relative;
     width: calc(100% - 250px);
     left: 250px;
     transition: var(--tran-05);
 }
 
-
-.CollegeTodo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    overflow-y: auto;
-    top: 50px;
-    padding-bottom: 32px;
-    border-radius: 10px;
-    margin-left: 400px;
-    background-color: #161a2b;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.CollegeTodo h1{
-    font-size: 20px;
-    margin: 32px 0;
-    color: white;
-}
-
-.todo-app{
-    max-width: 500px;
-    height: 600px;
-    max-height: 600px;
-}
-
-.sidebar.close ~.clg-todo{
+.sidebar.close ~ .todo{
     left: 88px;
     width: calc(100% - 88px);
 }
 
-.complete {
-    text-decoration: line-through;
-    opacity: 0.4;
-}
-
-.todo-form {
-    margin-bottom: 32px;
-}
-  
-.todo-input {
-    padding: 10px 24px 10px 24px;
-    border-radius: 6px 0 0 6px;
-    border: 2px solid #5d0cff;
-    outline: none;
-    width: 320px;
-    background: transparent;
-    color: #fff;
-}
-  
-.todo-input::placeholder {
-    color: #e2e2e2;
-    font-size: 15px;
-}
-  
-.todo-button {
-    padding: 12px;
-    border: none;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-    outline: none;
-    background: linear-gradient(
-      90deg,
-      rgba(93, 12, 255, 1) 0%,
-      rgba(155, 0, 250, 1) 100%
-    );
-    color: #fff;
-    text-transform: capitalize;
-}
-  
-.todo-input.edit {
-    border: 2px solid #149fff;
-    padding: 10px;
-}
-
-.todo-button.edit {
-    background: linear-gradient(
-      90deg,
-      rgba(20, 159, 255, 1) 0%,
-      rgba(17, 122, 255, 1) 100%
-    );
-    padding: 12px 22px;
-}
-  
-.todo-container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-}
-  
-.todo-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 4px auto;
-    color: #fff;
-    background: linear-gradient(
-        90deg,
-        rgba(93, 12, 255, 1) 0%,
-        rgba(155, 0, 250, 1) 100%
-    );
-  
-    padding: 12px;
-    border-radius: 5px;
-    width: 85%;
-}
-  
-.todo-row:nth-child(2n + 1) {
-    background: linear-gradient(
-      90deg,
-      rgba(20, 159, 255, 1) 0%,
-      rgba(17, 122, 255, 1) 100%
-    );
-}
-  
-  
-.icons {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-}
-  
-.delete-icon {
-    margin-right: 5px;
-    color: #fff;
-}
-  
-.edit-icon {
-    color: #fff;
-}
 
 //Custom Tiles
 
@@ -798,14 +662,13 @@ main{
     width: calc(100% - 100px);
 }
 
-#services .custom-a a{
+#services .custom-a{
+    width: 30%;
+    margin: 0 auto;
     cursor: pointer;
 }
 
-#services .custom-container{
-    width: 40%;
-    // left: 360px;
-    left: 28%;  
+#services .custom-container{  
     overflow-x: hidden;
     border: 2px solid rgb(154, 200, 253);
     background: transparent;
@@ -835,9 +698,11 @@ main{
     width: 115%;
     height: 100vh;
     background: transparent;
+	background: rgba(0, 0, 0, 0.618);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 
 .popup-inner{
@@ -972,7 +837,7 @@ main{
     width: 100%;
 }
 
-//Chat
+//Profile
 
 .mainprofile{
     transition: var(--tran-05);
@@ -999,7 +864,6 @@ main{
     background: var(--box-color);
     border-radius: 12px;
     max-width: 450px;
-    // max-width: 650px;
     position: relative;
 
     &__img {
@@ -1137,6 +1001,7 @@ main{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    transition: var(--tran-05);
 }
 
 .circles li{
@@ -1227,8 +1092,6 @@ main{
     animation-duration: 11s;
 }
 
-
-
 @keyframes animate {
 
     0%{
@@ -1245,3 +1108,618 @@ main{
 
 }
 
+@media only screen and (max-width: 1075px){
+    .nav{
+        display: none;
+    }
+
+    .mobile-nav{
+        position: absolute;
+        display: block;
+        list-style: none;
+        z-index: 1;
+        background-color: var(--box-color);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        right: 30px;
+        border-radius: 10px 3px 10px 10px;
+        top: 50px; 
+        transition: var(--tran-05);
+        width: 25%;
+    }
+
+    .menu-trigger{
+        display: block;
+        position: absolute;
+        font-size: 30px;
+        color: var(--text-color);
+        background-color: var(--body-color);
+        border: none;
+        right: 25px;
+        transition: var(--tran-05);
+    }
+
+    .navleft ul li{
+        text-align: justify;
+        padding: 4px;
+    }
+
+    #services .front-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 0;
+    }
+
+    .todo{
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+    .sidebar{
+        width: 90px;
+    }
+
+    .sidebar li.search-box{
+        display: none;
+    }
+
+    .sidebar.close{
+        width: 0px;
+
+        .image{
+            opacity: 0;
+        }
+    }
+
+    .sidebar .menu-bar li span{
+        display: none;
+    }
+
+    .sidebar header .text{
+        display: none;
+    }  
+
+    .navdash{
+        left: 80px;
+        width: calc(100% - 80px);
+    }
+
+    .sidebar.close ~ .navdash{
+        left: 20px;
+        width: calc(100% - 20px);
+    }
+
+    .section-header h3 {
+        font-size: 30px;
+    }
+
+    .profile{
+        width: calc(100% - 80px);
+        left: 80px;  
+    }
+
+    .custom-tiles{
+        width: calc(100% - 100px);
+        left: 100px;
+    }
+    
+    .todo{
+        width: calc(100% - 100px);
+        left: 100px;
+    }
+    
+}
+
+@media only screen and (max-width: 800px){
+
+    .mobile-nav{
+        width: 25%;
+    }
+
+    .navleft ul li a{
+        font-size: 13px;
+    }
+
+    .navleft ul li{
+        padding: 3px;
+    }
+
+    .profile-card {
+        max-width: 400px;
+    
+        &__img {
+            width: 130px;
+            height: 130px;
+        }
+
+        &__name {
+            font-size: 22px;
+        }
+
+        &__txt {
+            font-size: 17px;
+        }
+
+        &__button {
+            font-size: 17px;
+        }
+    }
+
+    .custom-container {
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 727px){
+
+    .mobile-nav{
+        width: 25%;
+    }
+
+    .navleft ul li a{
+        font-size: 11px;
+    }
+    
+    #services .front-row {
+        grid-template-columns: 1fr;
+        gap: 0px;
+        margin-bottom: 0;
+    }    
+    
+    .add-icon{
+        font-size: 2.3rem;   
+    }
+
+    .custom-tiles h3{
+        font-size: 24px;
+    }
+    
+}
+
+@media only screen and (max-width: 580px){
+
+    .mobile-nav{
+        width: 30%;
+    }
+
+    .sidebar .icon{
+        font-size: 18px;
+    }
+
+    .section-header h3 {
+        font-size: 25px;
+    }
+
+    #services .title {
+        font-size: 18px;
+    }
+
+    .main-title > img{
+        max-height: 50px;
+        margin-right: 10px;
+    }
+
+    .main-greeting > h1{
+        font-size: 16px;
+    }
+
+    .main-greeting > p{
+        font-size: 12px;
+    }
+
+    #services .box {
+        padding: 15px;    
+    }
+
+    #services .icon img{
+        height: 50px;
+    }
+
+    .profile-card {
+        max-width: 320px;
+    
+        &__img {
+            width: 100px;
+            height: 100px;
+        }
+
+        &__name {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        &__txt {
+            font-size: 15px;
+        }
+
+        &__button {
+            font-size: 15px;
+        }
+            
+        &-inf {
+
+            &__title {
+              font-size: 20px;
+            }
+
+            &__txt {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .add-icon{
+        font-size: 2.1rem;   
+    }
+
+    .custom-tiles h3{
+        font-size: 20px;
+    }
+
+    .custom-tiles .divider-line{
+        width: 180px;
+    }
+
+    .popup-inner{
+        padding: 15px;
+        height: 45%;
+    }
+    
+    .popup .popup-inner .popup-wrapper{
+        width: 380px;
+    }
+
+    .popup-inner .popup-wrapper .input-data{
+        width: 95%;
+    }
+
+}
+
+@media only screen and (max-width: 426px){
+
+    .navleft ul li a{
+        font-size: 9px;
+    }
+
+    .navleft ul li{
+        padding: 0px;
+    }
+    
+    .mobile-nav{
+        width: 35%;
+    }
+
+    .section-header h3 {
+        font-size: 22px;
+    }
+
+    #services .title {
+        font-size: 16px;
+    }
+
+    .main-title > img{
+        max-height: 45px;
+    }
+
+    #services .icon img{
+        height: 45px;
+    }
+
+    #services .description {
+        font-size: 12px;
+    }
+
+    .divider-line {
+        width: 50%;
+        width: 150px;
+    }
+
+    .profile-card {
+        max-width: 250px;
+    
+        &__img {
+            width: 100px;
+            height: 100px;
+        }
+
+        &__name {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        &__txt {
+            font-size: 15px;
+        }
+
+        &__button {
+            min-width: 180px;
+            min-height: 45px;
+            font-size: 15px;
+        }
+            
+        &-inf {
+
+            &__title {
+              font-size: 20px;
+            }
+
+            &__txt {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .add-icon{
+        font-size: 1.8rem;   
+    }
+
+    .popup-inner{
+        padding: 5px;
+        height: 40%;
+    }
+    
+    .popup .popup-inner .popup-wrapper{
+        width: 280px;
+    }
+
+    .popup-inner .popup-wrapper .input-data{
+        width: 95%;
+    }
+
+    .popup-inner .popup-wrapper .tile-submit{
+        left: 10%;
+        top: 60px;
+        padding: 10px 15px;
+    }
+
+    .popup-inner .popup-wrapper .input-data label{
+        font-size: 15px;
+    }
+
+    .popup-inner .popup-wrapper .input-data input{
+        font-size: 18px;
+    }
+    
+    .popup-inner .close-btn{
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 376px){
+
+    .navleft{
+        height: 60px;
+    }
+
+    .menu-trigger{
+        font-size: 25px;
+    }
+
+    .sidebar header .toggle{
+        top: 40%;
+    }
+    
+    .mobile-nav{
+        width: 40%;
+    }
+
+    .navleft ul .drop-link li{
+        width: 120px;
+    }
+
+    .section-header h3 {
+        font-size: 18px;
+    }
+
+    #services .title {
+        font-size: 13px;
+    }
+
+    .main-title > img{
+        max-height: 35px;
+    }
+
+    .main-greeting > h1{
+        font-size: 14px;
+    }
+
+    .main-greeting > p{
+        font-size: 10px;
+    }
+
+    #services .box {
+        padding: 10px;    
+    }
+
+    #services .icon img{
+        height: 40px;
+    }
+
+    #services .description {
+        font-size: 10px;
+    }
+
+    .divider-line {
+        width: 50%;
+        width: 120px;
+    }
+
+    .profile-card {
+        max-width: 230px;
+    
+        &__img {
+            width: 70px;
+            height: 70px;
+        }
+
+        &__name {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        &__txt {
+            font-size: 14px;
+        }
+
+        &__button {
+            font-size: 14px;
+            min-width: 180px;
+            min-height: 45px;
+        }
+            
+        &-inf {
+
+            &__title {
+              font-size: 18px;
+            }
+
+            &__txt {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .popup-inner{
+        padding: 0px;
+        height: 35%;
+    }
+    
+    .popup .popup-inner .popup-wrapper{
+        width: 230px;
+    }
+
+    .popup-inner .popup-wrapper .tile-submit{
+        left: 10%;
+        top: 50px;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .popup-inner .popup-wrapper .input-data input{
+        font-size: 16px;
+    }
+    
+    .popup-inner .close-btn{
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 326px){
+
+    .navleft{
+        height: 50px;
+    }
+
+    .menu-trigger{
+        font-size: 20px;
+    }
+
+    .sidebar header .toggle{
+        top: 30%;
+    }
+    
+    .mobile-nav{
+        width: 48%;
+    }
+
+    .navleft ul .drop-link li{
+        width: 120px;
+    }
+
+    .section-header h3 {
+        font-size: 14px;
+    }
+
+    #services .title {
+        font-size: 10px;
+    }
+
+    .main-title > img{
+        max-height: 30px;
+    }
+
+    .main-greeting > h1{
+        font-size: 12px;
+    }
+
+    .main-greeting > p{
+        font-size: 8px;
+    }
+
+    #services .description {
+        font-size: 8px;
+    }
+
+    .divider-line {
+        width: 50%; 
+        width: 80px;
+    }
+
+    .type p{
+        font-size: 0.50rem;
+    }
+
+    .type{
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    .profile-card {
+        max-width: 190px;
+    
+        &__img {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__name {
+            margin-top: 30px;
+            font-size: 13px;
+        }
+
+        &__txt {
+            font-size: 12px;
+        }
+
+        &__button {
+            font-size: 12px;
+            min-width: 140px;
+            min-height: 35px;
+        }
+            
+        &-inf {
+
+            &__title {
+              font-size: 13px;
+            }
+
+            &__txt {
+                font-size: 12px;
+            }
+        }
+    }
+    
+    .popup {
+        width: 125%;
+    }
+
+    .popup .popup-inner .popup-wrapper{
+        width: 220px;
+    }
+
+    .popup-inner .popup-wrapper .tile-submit{
+        left: 10%;
+        top: 50px;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .popup-inner .popup-wrapper .input-data input{
+        font-size: 16px;
+    }
+    
+    .popup-inner .close-btn{
+        font-size: 1.4rem;
+    }
+}

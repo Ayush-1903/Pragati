@@ -4,6 +4,7 @@ import { useLogin } from "../../../hooks/useLogin";
 import "../../../App.css";
 import authImage from "../images/scattered-forcefields.svg";
 import Wrapper from "../style/Auth.style";
+import { NavLink } from "react-router-dom";
 
 const initialState = {
   firstName: "",
@@ -60,8 +61,8 @@ const Auth = () => {
           backgroundSize: "cover",
         }}
       >
-        <h2>Get Started</h2>
-        <div className="container" id="container">
+        <h2 data-aos="fade-down" data-aos-duration="800">Get Started</h2>
+        <div className="container" id="container" data-aos="zoom-in" data-aos-duration="800">
           <div className="form-container sign-up-container">
             <form onSubmit={handleSignupSubmit}>
               <h1>Create Account</h1>
@@ -103,6 +104,7 @@ const Auth = () => {
               />
               <div className="error">{signupError}</div>
               <button type="submit">Sign Up</button>
+              <span>Already registered? <NavLink onClick={signInClick}>Login</NavLink></span>
             </form>
           </div>
 
@@ -129,7 +131,10 @@ const Auth = () => {
               <div className="error">{loginError}</div>
 
               <button type="submit">Log In</button>
+              <span>Not registered? <NavLink onClick={signUpClick}>Signup</NavLink></span>
+              <NavLink className='forgot' to = "/auth/forgot-password">Forgot password ?</NavLink>
             </form>
+          
           </div>
 
           <div className="overlay-container">

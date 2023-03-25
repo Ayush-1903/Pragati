@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     }
     .error:empty {
         display: none;
-    }
+    }   
 
     .registration {
         display: flex;
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     h1 {
         font-weight: bold;
         margin: 10px;
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: #000000;
     }
 
@@ -45,13 +45,8 @@ const Wrapper = styled.div`
         color: #000000;
     }
 
-    span {
-        font-size: 12px;
-        font-family: "Poppins", sans-serif;
-        margin: 5px;
-    }
-
     a {
+        font-family: "Poppins", sans-serif;
         color: #333;
         font-size: 14px;
         text-decoration: none;
@@ -131,6 +126,32 @@ const Wrapper = styled.div`
         left: 0;
         width: 50%;
         z-index: 2;
+    }
+
+    .forgot{
+        font-size: 13px;
+        color: #84809A;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+    
+    .forgot:hover{
+        color: black;
+        transition: all 0.3s ease;
+    }
+
+    span{
+        font-family: "Poppins", sans-serif;
+        display: none;
+        color: #84809A;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    span a{
+        font-size: 13px;
+        font-weight: 800;
     }
 
     .container.right-panel-active .sign-in-container {
@@ -231,68 +252,63 @@ const Wrapper = styled.div`
     .container.right-panel-active .overlay-right {
         transform: translateX(20%);
     }
+    
+    @media only screen and (max-width: 769px){
 
-    .social-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #222;
-        padding: 0px 15px;
-        border-radius: 20px;
-        margin: 20px;
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        transition: all 0.4s;
+        .container{
+            width: 500px;
+        }
+
+        .overlay-container{
+            display: none;
+        }
+
+        .sign-in-container{
+            margin-left: 10%;
+            width: 400px;
+        }
+
+        .sign-up-container{
+            margin-left: -70%;
+            width: 400px;
+        }
+
+        span{ 
+            display: block;
+        }
     }
 
-    .social-container img {
-        transition: all 0.4s;
-    }
+    @media only screen and (max-width: 500px){
 
-    .social-container:hover {
-        transform: scale(1.05);
-    }
+        h1 {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #000000;
+        }
+        
+        .container{
+            width: 300px;
+        }
 
-    .social-container a {
-        font-family: "Poppins", sans-serif;
-        margin-left: 10px;
-        color: rgb(255, 255, 255);
-    }
+        input {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
 
-    .forgot {
-        font-family: "Poppins", sans-serif;
-        transition: all 0.3s;
-        color: #000000;
-    }
+        button {
+            padding: 10px 30px;
+        }
 
-    .forgot:hover {
-        color: #2b89fc;
-    }
+        .sign-in-container{
+            margin-left: 0%;
+            width: 300px;
+        }
 
-    footer {
-        background-color: #222;
-        color: #fff;
-        font-size: 14px;
-        bottom: 0;
-        position: fixed;
-        left: 0;
-        right: 0;
-        text-align: center;
-        z-index: 999;
+        .sign-up-container{
+            margin-left: -100%;
+            width: 300px;
+        }
     }
-
-    footer p {
-        margin: 10px 0;
-    }
-
-    footer i {
-        color: red;
-    }
-
-    footer a {
-        color: #3c97bf;
-        text-decoration: none;
-    }
-`;
+`
 
 export default Wrapper;

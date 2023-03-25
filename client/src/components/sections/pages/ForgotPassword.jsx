@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SERVER_URL } from "../../../constants/constants";
 import { Box, Typography } from "@mui/material";
+import ForgotWrapper from "../style/Forgot.style";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -24,18 +25,21 @@ export default function ForgotPassword() {
     }
   };
   return (
-    <Box>
-      <form>
-        <input
-          type="email"
-          name="forgot-password"
-          id="forgot-password"
-          value={email}
-          onChange={handleChange}
-        />
-        <button onClick={handleClick}>Forgot Password</button>
-      </form>
-      <Typography variant="h6">{message}</Typography>
-    </Box>
+    <ForgotWrapper>
+      <Box>
+        <form>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            name="forgot-password"
+            id="forgot-password"
+            value={email}
+            onChange={handleChange}
+          />
+          <button className="forgot-submit btn-15" onClick={handleClick}>Forgot Password</button>
+        </form>
+        <Typography variant="h6">{message}</Typography>
+      </Box>
+    </ForgotWrapper>
   );
 }

@@ -2,22 +2,18 @@ import styled from "styled-components";
 
 const ServiceWrapper = styled.div`
     .container{
-        width: 100%;
-        height: 100vh;
-        padding: 0 8%;
-        font-family: 'Poppins', sans-serif;
+        padding: 30px 0px 0px 0px;
     }
 
     .container h1{
         text-align: center;
-        padding-top: 12%;
         margin-bottom: 20px;
         font-weight: 600;
         position: relative;
     }
 
     .container h6{
-        position: relative;
+        font-size: 18px;
         text-align: center;
         font-weight: 500;
         margin-bottom: 40px;
@@ -31,7 +27,7 @@ const ServiceWrapper = styled.div`
         content: '';
         background: #3bbeff;
         width: 150px;
-        height: 4px;
+        height: 3.5px;
         position: absolute;
         bottom: -5px;
         left: 50%; 
@@ -60,7 +56,6 @@ const ServiceWrapper = styled.div`
     .service video{
         max-width: 330px;
         margin-bottom: 10px;
-        color: #303ed7;
     }
 
     .service h2{
@@ -78,8 +73,8 @@ const ServiceWrapper = styled.div`
     }
 
     .service:hover {
-        -webkit-transform: scale(1.28);
-        transform: scale(1.28);
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
         box-shadow: 0 3px 10px 0 rgb(154, 200, 253);
     }
 
@@ -87,6 +82,51 @@ const ServiceWrapper = styled.div`
         background: linear-gradient(to right, #0062db, #00d0ff, #0062db);
         -webkit-background-clip: text;
         color: transparent;
+    }
+
+    @media only screen and (max-width: 1200px){
+        .service video{
+            max-width: 250px;
+        }
+    }
+
+    @media only screen and (max-width: 630px){
+
+        .service video{
+            max-width: 200px;
+        }
+
+        .service h2{
+            font-size: 20px;
+        }
+
+        .service p{
+            font-size: 12px;
+        }
+    }
+
+    @media only screen and (max-width: 521px){
+        .row{
+            margin: 50px;
+        }    
+
+        .container h1{
+            font-size: 24px;
+        }
+
+        .container h6{
+            font-size: 15px;
+        }
+    
+        .container .wink{
+            max-width: 15px;
+        }
+    }
+    
+    @media only screen and (max-width: 375px){
+        .row{
+            margin: 30px;
+        }    
     }
 `
 

@@ -1,0 +1,54 @@
+@import '../_mixins.scss';
+
+.app__wrapper {
+	max-width: 650px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.appHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+}
+
+.content__wrapper {
+	background-color: var(--todo-bg);
+	padding: 1.2rem;
+	border-radius: 12px;
+	@include smallDeviceSize {
+		padding: 0.8rem;
+	}
+}
+
+.emptyText {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--todo-text);
+	text-align: center;
+	margin: 0 auto;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	background-color: var(--todo-option-color);
+	width: max-content;
+	height: auto;
+}
+
+@media only screen and (max-width: 900px){
+	.app__wrapper{
+		max-width: 600px;
+	}
+}
+
+@media only screen and (max-width: 727px){
+	.app__wrapper{
+		max-width: 500px;
+	}
+}
+
+@media only screen and (max-width: 580px){
+	.app__wrapper{
+		max-width: 350px;
+	}
+}

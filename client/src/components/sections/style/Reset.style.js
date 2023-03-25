@@ -1,6 +1,9 @@
 const styles = {
   ContainerStyle: {
-    margin: "40px auto",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
   },
   PaperStyle: {
     margin: "10px",
@@ -18,7 +21,7 @@ const styles = {
   button: {
     width: "max-content",
     margin: "10px 0px",
-    backgroundColor: "#3f51b5",
+    backgroundColor: "rgb(80, 170, 255)",
     cursor: "pointer",
   },
   ErrorStyle: {

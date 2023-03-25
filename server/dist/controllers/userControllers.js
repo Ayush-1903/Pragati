@@ -115,7 +115,6 @@ const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function*
                 return res.status(500).send({ message: "Something went wrong while sending email" });
             }
             else {
-                console.log("message sent!");
                 return res.status(200).send({ message: "Email sent successfully" });
             }
         });

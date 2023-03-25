@@ -3,24 +3,23 @@ import { NavLink } from 'react-router-dom';
 import '../Dashboard.scss';
 import logo from '../images/logo2.svg';
 import Nav from '../Nav/Nav';
-import CollegeTodo from '../todo/CollegeTodo';
+// import CollegeTodo from '../todo/CollegeTodo';
+import Todo from '../Todo/Todo';
 import CustomTile from '../Custom/CustomTile';
-import Chat from '../Chat/Chat';
 import Profile from '../Profile/Profile';
-
 import { useLogout } from '../../../hooks/useLogout';
 
 const Sidebar = () => {
 
     const [active, setActive] = useState("Nav");
+
     const {logout} = useLogout();
 
     const sideLink = document.querySelectorAll("a");
 
     sideLink.forEach(element => {
         element.addEventListener("click", function() {
-            sideLink.forEach(a=>a.classList.remove("active"))
-
+            sideLink.forEach(a=>a.classList.remove("active"));
             this.classList.add("active");
         })
     })
@@ -45,7 +44,7 @@ const Sidebar = () => {
 
     return (
         <div className='sidebar-main'>
-            <nav className="sidebar close">
+            <nav className="sidebar">
             <header>
                 <div className="image-text">
                     <NavLink to="/">
@@ -60,9 +59,9 @@ const Sidebar = () => {
                     </div>
                 </div>
                 <i className='bx bx-chevron-right toggle' onClick={sidebarClick}></i>
-                </header>
+            </header>
 
-                <div className="menu-bar">
+            <div className="menu-bar">
 
                 <div className="menu">
                         <li className="search-box" onClick={searchClick}>
@@ -84,12 +83,12 @@ const Sidebar = () => {
                             </a>
                         </li>
 
-                        <li className="nav-link">
+                        {/* <li className="nav-link">
                             <a onClick={() => setActive("Chat")}>
                                 <i class='bx bx-star icon'></i>
                                 <span className="text nav-text">Favourite Tiles</span>
                             </a>    
-                        </li>
+                        </li> */}
 
                         <li className="nav-link">
                             <a onClick={() => setActive("Custom")}>
@@ -127,11 +126,11 @@ const Sidebar = () => {
                     </li>
                     
                 </div>
-                </div>
+            </div>
             </nav>
 
             {active === "Nav" && <Nav />}
-            {active === "CollegeTodo" && <CollegeTodo />}
+            {active === "CollegeTodo" && <Todo />}
             {active === "Custom" && <CustomTile/>}
             {active === "Chat" && <Chat/>}
             {active === "Profile" && <Profile/>}
