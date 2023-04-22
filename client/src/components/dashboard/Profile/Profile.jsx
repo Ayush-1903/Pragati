@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import man from '../images/man.png';
+// import UserContext from '../../../context/UserContext';
 
 const Profile = () => {
+
+  // const {firstName} = useContext(UserContext);
+
   return (
     <div className='mainprofile'>
         <div className='profile' data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
@@ -11,7 +15,7 @@ const Profile = () => {
             </div>
 
             <div class="profile-card__cnt js-profile-cnt">
-              <div class="profile-card__name">Username</div>
+              {/* <div class="profile-card__name">{firstName}</div> */}
               <div class="profile-card__txt"><strong>Email-id : </strong>user@gmail.com</div>
 
               <div class="profile-card-inf">
@@ -48,7 +52,7 @@ const Profile = () => {
                     <li></li>
                     <li></li>
             </ul>
-        </div >
+        </div>
       </div>
   )
 }

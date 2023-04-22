@@ -57,17 +57,17 @@ const Popup = (props) => {
               <button className='close-btn' onClick={() => props.setTrigger(false)}><i class='bx bx-x-circle'></i></button>
               <form className='popup-wrapper'>
                 <div className='input-data'>
-                  <input name="title" type="text" onChange={handleChange} value={tile.title} required/>
+                    <input name="title" type="text" onChange={handleChange} value={tile.title} required/>
                   <div className='underline'></div>
                   <label>Enter Title</label>
                 </div>
                 <div className='input-data url'>
-                  <input name="url" type="url" onChange={handleChange} value={tile.url} required/>
+                    <input name="url" type="url" onChange={handleChange} value={tile.url} required/>
                   <div className='underline'></div>
                   <label>Enter Website URL</label>
                 </div>
                 <div onClick={() => props.setTrigger(false)}>
-                  <button className="tile-submit btn-15" onClick={submitTile}>Add Website Tile</button>
+                  <button type="submit" className="tile-submit btn-15" onClick={submitTile}>Add Website Tile</button>
                 </div>
               </form>
               {props.children}

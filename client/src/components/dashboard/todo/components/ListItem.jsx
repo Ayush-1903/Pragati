@@ -42,7 +42,7 @@ const ListItem = ({todo}) => {
 
   const handleDelete = () => {
     dispatch(deleteTodo(todo.id));
-    toast.success('Deleted Successfully');
+    toast.success('Task Deleted Successfully');
   };
 
   const handleUpdate = () => {

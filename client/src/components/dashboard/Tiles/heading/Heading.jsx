@@ -1,7 +1,8 @@
-import user from '../images/User.svg';
-import React from 'react';
+import React, {useContext} from 'react';
+// import user from '../images/User.svg';
 
 const Heading = () => {
+
     const date = new Date();
     const currTime = date.getHours();
 
@@ -21,7 +22,7 @@ const Heading = () => {
 
     return (
         <div className="main-title">
-                <img alt="Hello" src={user}></img>
+                {/* <img alt="Hello" src={user}></img> */}
                 <div className="main-greeting">
                     <h1>{greeting}!</h1>
                     <p>Welcome to your Dashboard</p>

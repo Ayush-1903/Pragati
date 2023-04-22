@@ -22,9 +22,9 @@ export const Navbar = () => {
                 </ul>        
                 <button className='menu-trigger' onClick={() => setShowMenu(!showMenu)}>    
                     {showMenu ? (
-                        <i class='bx bx-x-circle'></i>
+                        <i className='bx bx-x-circle'></i>
                         ) : ( 
-                        <i class='bx bx-menu'></i>
+                        <i className='bx bx-menu'></i>
                         )
                     }
                 </button>

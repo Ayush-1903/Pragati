@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useSignup } from "../../../hooks/useSignup";
 import { useLogin } from "../../../hooks/useLogin";
 import "../../../App.css";
@@ -15,6 +15,7 @@ const initialState = {
 };
 
 const Auth = () => {
+
   const [formData, setFormData] = useState(initialState);
   const { signup, signupError, setSignupError, signupIsLoading } = useSignup();
   const { login, loginError, setLoginError, loginIsLoading } = useLogin();
@@ -23,12 +24,13 @@ const Auth = () => {
     e.preventDefault();
     await signup(
       formData.firstName,
-      formData.lastName,
+      formData.lastName,  
       formData.email,
       formData.password,
       formData.isSchoolStudent
     );
   };
+
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     await login(formData.email, formData.password);
@@ -156,7 +158,7 @@ const Auth = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>  
     </Wrapper>
   );
 };

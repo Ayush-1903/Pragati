@@ -12,6 +12,7 @@
     --box-color: #fff; 
     --dropdown-color: #ffffff;
     --flybox-color: rgba(11, 114, 249, 0.4);
+    --shimmer-color: #f0f0f0;
 
     // Todo Colors
     --todo-color: #ECEDF6;  
@@ -31,6 +32,7 @@
     --tran-05: all 0.3s ease;
 }
 
+// Sidebar
 .sidebar-main{
     min-height: 100vh;
     background-color: var(--body-color);
@@ -48,6 +50,7 @@
     --box-color: #252525;
     --dropdown-color: #2f2e2e;
     --flybox-color: #256ff9;
+    --shimmer-color: #4b4b4b;
 
     // Todo Colors
     --todo-text: #f1f0f0;
@@ -224,6 +227,7 @@ header .image-text .profession{
 .sidebar li a:hover{
     background-color: var(--primary-color);
 }
+
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text{
     color: var(--sidebar-color);
@@ -233,15 +237,16 @@ header .image-text .profession{
     color: var(--text-color);
 }
 
-.sidebar li a.active{
+.sidebar-active{
     background-color: var(--primary-color);
+    border-radius: 6px;
 
     .icon, .text{
         color: var(--sidebar-color);
     }
 }
 
-.sidebar-main.dark .sidebar li a.active{
+.sidebar-main.dark .sidebar-active {
     .icon, .text {
         color: var(--text-color);
     }
@@ -422,6 +427,33 @@ ul .active-link{
     border-radius: 0 0px 10px 10px;
 }
 
+
+
+.navleft ul .drop-link-study li{
+    width: 150px;
+    text-align: justify;
+    float: none;
+    color: var(--text-color);
+    padding: 5px;
+    border-left: 0;
+    display: list-item;
+    position: relative;
+}
+
+.navleft ul .drop-link-study li:hover{
+    transition: all 0.2s;
+    background-color: rgb(56, 145, 247);
+    color: rgb(255, 255, 255);
+}
+
+.navleft ul .drop-link-study li:hover:nth-child(1){
+    border-radius: 0 10px 0px 0px;
+}
+
+.navleft ul .drop-link-study li:hover:nth-child(2){
+    border-radius: 0 0px 10px 10px;
+}
+
 .navleft ul ul li .sub-link{
     color: var(--text-color);
     display: none;
@@ -496,7 +528,7 @@ main{
     flex-direction: column;
     justify-content: space-around;
     padding: 20px;
-    height: 80%;    
+    min-height: 80%;
     border: 2px solid transparent;
     border-radius: 10px;
     text-align: center;
@@ -505,6 +537,46 @@ main{
     background: var(--box-color);
     box-shadow: 0 10px 25px 0 rgba(68, 88, 144, 0.1);
     transition: var(--tran-05);
+    overflow: hidden; 
+    position: relative;
+}
+
+.shimmer {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: linear-gradient(to right, transparent 0%, var(--shimmer-color) 40%, transparent 100%);
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: shimmer;
+    opacity: 0.3;
+}
+  
+.shimmer-effect {
+    opacity: 1;
+}
+  
+@keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+}
+
+.content {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+  
+.content.show {
+    opacity: 1;
 }
 
 #services .box:hover {
@@ -745,7 +817,7 @@ main{
     width: 100%;
     border: none;
     outline: none;
-    font-size: 22px;
+    font-size: 18px;
     color: var(--text-color);
     background: var(--sidebar-color);
     border-bottom: 2px solid rgb(105, 105, 105);
@@ -1508,6 +1580,10 @@ main{
         width: 120px;
     }
 
+    .navleft ul .drop-link-study li{
+        width: 90px;
+    }
+
     .section-header h3 {
         font-size: 18px;
     }
@@ -1627,6 +1703,10 @@ main{
         width: 120px;
     }
 
+    .navleft ul .drop-link-study li{
+        width: 80px;
+    }
+
     .section-header h3 {
         font-size: 14px;
     }
@@ -1663,6 +1743,11 @@ main{
     .type{
         font-size: 0.75rem;
         font-weight: 500;
+    }
+
+    .loading {
+        font-size: 15px;
+        font-weight: 400;
     }
 
     .profile-card {

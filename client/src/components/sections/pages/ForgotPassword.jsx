@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { SERVER_URL } from "../../../constants/constants";
 import { Box, Typography } from "@mui/material";
 import ForgotWrapper from "../style/Forgot.style";
+import ForgotLogo from '../images/ForgotLogo.svg';
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -26,6 +27,10 @@ export default function ForgotPassword() {
   };
   return (
     <ForgotWrapper>
+      <div className="forgot-main">
+
+        <img src={ForgotLogo} alt="" />
+
       <Box>
         <form>
           <input
@@ -40,6 +45,24 @@ export default function ForgotPassword() {
         </form>
         <Typography variant="h6">{message}</Typography>
       </Box>
+
+      </div>
+
+      <div class="area" >
+          <ul class="circles">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+          </ul>
+      </div>
+
     </ForgotWrapper>
   );
 }

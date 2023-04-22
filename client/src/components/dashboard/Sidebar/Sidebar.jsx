@@ -2,27 +2,21 @@ import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import '../Dashboard.scss';
 import logo from '../images/logo2.svg';
-import Nav from '../Nav/Nav';
-// import CollegeTodo from '../todo/CollegeTodo';
+import Mainnav from '../Nav/Mainnav/Mainnav';
+import VideoNav from '../Nav/VideosNav/VideoNav';
 import Todo from '../Todo/Todo';
 import CustomTile from '../Custom/CustomTile';
 import Profile from '../Profile/Profile';
+import FavTile from '../Tiles/tile/FavTiles/FavTile';
 import { useLogout } from '../../../hooks/useLogout';
 
 const Sidebar = () => {
 
     const [active, setActive] = useState("Nav");
 
+    const [activeLink, setActiveLink] = useState("Home");
+
     const {logout} = useLogout();
-
-    const sideLink = document.querySelectorAll("a");
-
-    sideLink.forEach(element => {
-        element.addEventListener("click", function() {
-            sideLink.forEach(a=>a.classList.remove("active"));
-            this.classList.add("active");
-        })
-    })
 
     function sidebarClick() {
         document.querySelector('nav').classList.toggle('close');
@@ -44,6 +38,9 @@ const Sidebar = () => {
 
     return (
         <div className='sidebar-main'>
+            {/* <div id="loader" className="load">
+                <hr/><hr/><hr/><hr/>
+            </div> */}
             <nav className="sidebar">
             <header>
                 <div className="image-text">
@@ -64,42 +61,49 @@ const Sidebar = () => {
             <div className="menu-bar">
 
                 <div className="menu">
-                        <li className="search-box" onClick={searchClick}>
+                        {/* <li className="search-box" onClick={searchClick}>
                             <i className='bx bx-search icon'></i>
                             <input type="text" placeholder="Search..." />
-                        </li>
+                        </li> */}
 
-                        <li className="nav-link">
-                            <a className="active" onClick={() => setActive("Nav")}>
+                        <li className={`nav-link ${activeLink === "Home" ? "sidebar-active" : ""}`} onClick={() => setActiveLink("Home")}>
+                            <a onClick={() => setActive("Nav")}>
                                 <i className='bx bx-home icon'></i>
                                 <span className="text nav-text">Home</span>
                             </a>
                         </li>
 
-                        <li className="nav-link">
+                        <li className={`nav-link ${activeLink === "Videos" ? "sidebar-active" : ""}`} onClick={() => setActiveLink("Videos")}>
+                            <a onClick={() => setActive("VideosNav")}>
+                                <i className='bx bxs-videos icon'></i>
+                                <span className="text nav-text">Videos</span>
+                            </a>
+                        </li>
+
+                        <li className={`nav-link ${activeLink === "Todo" ? "sidebar-active" : ""}`} onClick={() => setActiveLink("Todo")}>
                             <a onClick={() => setActive("CollegeTodo")}>
-                                <i class='bx bx-list-check icon'></i>
+                                <i className='bx bx-list-check icon'></i>
                                 <span className="text nav-text">Todo List</span>
                             </a>
                         </li>
 
-                        {/* <li className="nav-link">
-                            <a onClick={() => setActive("Chat")}>
-                                <i class='bx bx-star icon'></i>
+                        <li className={`nav-link ${activeLink === "Fav" ? "sidebar-active" : ""}`} onClick={() => setActiveLink("Fav")}>
+                            <a onClick={() => setActive("Fav")}>
+                                <i className='bx bx-star icon'></i>
                                 <span className="text nav-text">Favourite Tiles</span>
                             </a>    
-                        </li> */}
+                        </li>
 
-                        <li className="nav-link">
+                        <li className={`nav-link ${activeLink === "Custom" ? "sidebar-active" : ""}`} onClick={() => setActiveLink("Custom")}>
                             <a onClick={() => setActive("Custom")}>
-                                <i class='bx bxs-add-to-queue icon'></i>
+                                <i className='bx bxs-add-to-queue icon'></i>
                                 <span className="text nav-text">Custom Tiles</span>
                             </a>
                         </li>
                     
                 </div>
                 <div className="bottom-content">
-                    <li className="">
+                    <li className={`nav-link ${activeLink === "Profile" ? "sidebar-active" : ""}`} onClick={() => setActiveLink("Profile")}>
                         <a onClick={() => setActive("Profile")}>
                             <i className='bx bx-user icon'></i>
                             <span className="text nav-text">Profile</span>
@@ -129,10 +133,11 @@ const Sidebar = () => {
             </div>
             </nav>
 
-            {active === "Nav" && <Nav />}
+            {active === "Nav" && <Mainnav />}
+            {active === "VideosNav" && <VideoNav />}
             {active === "CollegeTodo" && <Todo />}
             {active === "Custom" && <CustomTile/>}
-            {active === "Chat" && <Chat/>}
+            {active === "Fav" && <FavTile/>}
             {active === "Profile" && <Profile/>}
         </div>
     )

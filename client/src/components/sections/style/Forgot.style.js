@@ -1,11 +1,21 @@
 import styled from "styled-components";
 
 const ForgotWrapper = styled.div`
-    form{
+    
+    .forgot-main{
         position: absolute;
-        top: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        z-index: 200;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .forgot-main img{
+        width: 450px;
+        margin-bottom: 40px;
     }
 
     form input{
@@ -32,13 +42,14 @@ const ForgotWrapper = styled.div`
     }
 
     .btn-15{
-        background: rgb(80, 170, 255);
+        background: #2B4A79;
         border: none;
         z-index: 1;
+        color: white;
     }
 
     .btn-15:hover{
-        color: white;
+        color: black;
     }
 
 
