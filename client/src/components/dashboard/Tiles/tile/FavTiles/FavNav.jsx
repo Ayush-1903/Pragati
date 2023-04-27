@@ -20,35 +20,6 @@ const FavNav = () => {
     useEffect(() => {
         console.log(tileData);
     }), [tileData]
-
-    // function getWebsite() {
-
-    //     const webData = collection(db, 'favourites', 'userEmails', email);
-
-    //     getDocs(webData)
-    //       .then((res) => {
-    //         const tiles = res.docs.map((doc) => {
-    //           const data = doc.data();
-    //           const id = doc.id;
-    //           const imageUrl = data.image;
-    //           return {
-    //             data: { ...data, image: null },
-    //             id: id,
-    //             imageUrl: imageUrl,
-    //           };
-    //         });
-    //         Promise.all(
-    //           tiles.map((tile) =>
-    //             getDownloadURL(ref(getStorage(), tile.imageUrl))
-    //               .then((url) => ({ ...tile, data: { ...tile.data, image: url } }))
-    //               .catch((error) => console.log(error.message))
-    //           )
-    //         ).then((results) => {
-    //           setTileData(results);
-    //         });
-    //       })
-    //       .catch((error) => console.log(error.message));
-    // }
     
     function getWebsite() {
 
