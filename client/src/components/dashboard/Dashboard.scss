@@ -605,10 +605,8 @@ main{
 
 .favourite .hollow{
     position: absolute;
-    display: none;
     top: 0;
     right: 0;
-    transition: var(--tran-05);
 }
 
 .hollow .hollowStar{
@@ -618,23 +616,13 @@ main{
 
 .favourite .fill{
     position: absolute;
-    display: none;
     top: 0;
     right: 0;
-    transition: var(--tran-05);
 }
 
 .fill .fillStar{
     font-size: 1.3rem;
     color: var(--text-color);
-}
-
-.favourite:hover .fill{
-    display: block;
-}
-
-#services .box:hover .hollow{
-    display: block;
 }
 
 #services .icon img{
@@ -717,196 +705,6 @@ main{
 .sidebar.close ~ .todo{
     left: 88px;
     width: calc(100% - 88px);
-}
-
-
-//Custom Tiles
-
-.custom-tiles{
-    position: relative;
-    width: calc(100% - 300px);
-    left: 280px;
-    transition: var(--tran-05);
-}
-
-.sidebar.close ~ .custom-tiles{
-    left: 100px;
-    width: calc(100% - 100px);
-}
-
-#services .custom-a{
-    width: 30%;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-#services .custom-container{  
-    overflow-x: hidden;
-    border: 2px solid rgb(154, 200, 253);
-    background: transparent;
-}
-
-.add-icon{
-    font-size: 3rem;   
-    color: var(--text-color);
-    transition: all 0.3s ease-in-out;
-    background: linear-gradient(to right, #0062db, #00d0ff, #0062db);
-    background-clip: text;
-    -webkit-background-clip:text;
-}
-
-#services .box:hover .add-icon {
-    background: linear-gradient(to right, #0062db, #00d0ff, #0062db);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-//Popup
-
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 115%;
-    height: 100vh;
-    background: transparent;
-	background: rgba(0, 0, 0, 0.618);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-
-.popup-inner{
-    position: relative;
-    padding: 20px;
-    background: var(--sidebar-color);
-    height: 45%;
-    max-width: 640px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-}
-
-.popup .popup-inner .popup-wrapper{
-    width: 400px;
-    padding: 30px;
-}
-
-.popup-inner .close-btn{
-    position: absolute;
-    top: 18px;
-    font-size: 1.5rem;
-    color: var(--text-color);
-    border: none;
-    background: var(--sidebar-color);
-    right: 18px;
-}
-
-.popup-inner .popup-wrapper .input-data{
-    height: 40px;
-    width: 100%;
-    position: relative;
-}
-
-.popup-inner .popup-wrapper .url{
-    top: 30px;
-}
-
-.popup-inner .popup-wrapper .input-data input{
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    color: var(--text-color);
-    background: var(--sidebar-color);
-    border-bottom: 2px solid rgb(105, 105, 105);
-}
-
-.popup-inner .popup-wrapper .input-data label{
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    font-size: 18px;
-    color: var(--text-color);
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.popup-wrapper .input-data input:focus ~label,
-.popup-wrapper .input-data input:valid ~label{
-    transform: translateY(-20px);
-    font-size: 16px;
-}
-
-.popup-inner .popup-wrapper .input-data .underline{
-    position: absolute;
-    bottom: 0px;
-    height: 2px;
-    width: 100%;
-}
-
-.popup-wrapper .input-data .underline::before{
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: rgb(80, 170, 255);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.popup-wrapper .input-data input:focus ~.underline::before,
-.popup-wrapper .input-data input:valid ~.underline::before{
-    transform: scaleX(1);
-}
-
-.popup-inner .popup-wrapper .tile-submit{
-    position: relative;
-    display: inline-block;
-    left: 25%;
-    top: 80px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    background: transparent;
-    font-weight: 500 !important;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-    transition: all .3s ease;
-}
-
-.popup-inner .popup-wrapper .btn-15{
-    background: rgb(80, 170, 255);
-    border: none;
-    z-index: 1;
-}
-
-.popup-inner .popup-wrapper .btn-15:after{
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #215ffb;
-    border-radius: 5px;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
-    transition: all 0.3s ease;
-}
-
-.popup-inner .popup-wrapper .btn-15:hover {
-    color: #fff;
-}
-
-.popup-inner .popup-wrapper .btn-15:hover:after {
-    left: 0;
-    width: 100%;
 }
 
 //Profile

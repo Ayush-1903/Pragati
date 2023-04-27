@@ -1,10 +1,9 @@
-import React from "react";
-import Tile from "./Tile";
-import Heading from "../../heading/Heading";
+import React from 'react';
+import FavTile from './FavTile';
+import Heading from '../../heading/Heading';
 import { Toaster } from 'react-hot-toast';
 
-const Tiles = ({ filter, data}) => {
-
+const FavTiles = ({ title, data}) => {
     return (
         <main>
             <div className="main-container">
@@ -16,8 +15,8 @@ const Tiles = ({ filter, data}) => {
                             data-aos="fade-right"
                             data-aos-duration="500"
                             data-aos-delay="100"
-                        >   
-                            <h3>{filter}</h3>
+                        >
+                            <h3>{title}</h3>
                             <div className="divider-line"></div>
                         </header>
                         
@@ -28,12 +27,12 @@ const Tiles = ({ filter, data}) => {
                             data-aos-delay="200"
                         >
                             {data.map((tile) => (
-                                <Tile
+                                <FavTile
                                     description = {tile.data.description}
                                     title = {tile.data.title}
                                     link = {tile.data.link}
                                     image = {tile.data.image}
-                                    filter= {filter}
+                                    filter = {tile.data.filter}
                                 />
                             ))}
                             <Toaster
@@ -50,6 +49,6 @@ const Tiles = ({ filter, data}) => {
             </div>
         </main>
     );
-};
+}
 
-export default Tiles;
+export default FavTiles

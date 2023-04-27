@@ -4,10 +4,10 @@ import '../Dashboard.scss';
 import logo from '../images/logo2.svg';
 import Mainnav from '../Nav/Mainnav/Mainnav';
 import VideoNav from '../Nav/VideosNav/VideoNav';
+import FavNav from '../Tiles/tile/FavTiles/FavNav';
+import CustomNav from '../Tiles/tile/CustomTiles/CustomNav';
 import Todo from '../Todo/Todo';
-import CustomTile from '../Custom/CustomTile';
 import Profile from '../Profile/Profile';
-import FavTile from '../Tiles/tile/FavTiles/FavTile';
 import { useLogout } from '../../../hooks/useLogout';
 
 const Sidebar = () => {
@@ -38,9 +38,6 @@ const Sidebar = () => {
 
     return (
         <div className='sidebar-main'>
-            {/* <div id="loader" className="load">
-                <hr/><hr/><hr/><hr/>
-            </div> */}
             <nav className="sidebar">
             <header>
                 <div className="image-text">
@@ -136,8 +133,8 @@ const Sidebar = () => {
             {active === "Nav" && <Mainnav />}
             {active === "VideosNav" && <VideoNav />}
             {active === "CollegeTodo" && <Todo />}
-            {active === "Custom" && <CustomTile/>}
-            {active === "Fav" && <FavTile/>}
+            {active === "Custom" && <CustomNav/>}
+            {active === "Fav" && <FavNav/>}
             {active === "Profile" && <Profile/>}
         </div>
     )

@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const initialState = {
   firstName: "",
-  lastName: "",
+  lastName: "", 
   email: "",
   password: "",
   isSchoolStudent: false,

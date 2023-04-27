@@ -23,6 +23,7 @@ export const AuthContextProvider = ({ children }) => {
         if (user) {
             authDispatch({ type: AUTH, payload: { ...user } });
         }
+
     }, []);
 
     return (

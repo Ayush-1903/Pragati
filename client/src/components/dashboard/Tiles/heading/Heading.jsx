@@ -1,7 +1,12 @@
 import React, {useContext} from 'react';
-// import user from '../images/User.svg';
+import userimage from '../../images/User.svg';
+import { AuthContext } from '../../../../context/AuthContext';
 
 const Heading = () => {
+
+    const { user } = useContext(AuthContext);
+
+    const username = user?.user?.name;
 
     const date = new Date();
     const currTime = date.getHours();
@@ -22,9 +27,9 @@ const Heading = () => {
 
     return (
         <div className="main-title">
-                {/* <img alt="Hello" src={user}></img> */}
+                <img alt="Hello" src={userimage}></img>
                 <div className="main-greeting">
-                    <h1>{greeting}!</h1>
+                    <h1>{greeting} ! {username}</h1>
                     <p>Welcome to your Dashboard</p>
                 </div>
         </div>

@@ -1,9 +1,9 @@
-import React from "react";
-import Tile from "./Tile";
-import Heading from "../../heading/Heading";
-import { Toaster } from 'react-hot-toast';
+import React from 'react';
+import Heading from '../../heading/Heading';
+import CustomTile from './CustomTile';
 
-const Tiles = ({ filter, data}) => {
+
+const CustomTiles = ({ title, data}) => {
 
     return (
         <main>
@@ -16,8 +16,8 @@ const Tiles = ({ filter, data}) => {
                             data-aos="fade-right"
                             data-aos-duration="500"
                             data-aos-delay="100"
-                        >   
-                            <h3>{filter}</h3>
+                        >
+                            <h3>{title}</h3>
                             <div className="divider-line"></div>
                         </header>
                         
@@ -28,28 +28,18 @@ const Tiles = ({ filter, data}) => {
                             data-aos-delay="200"
                         >
                             {data.map((tile) => (
-                                <Tile
-                                    description = {tile.data.description}
+                                <CustomTile
                                     title = {tile.data.title}
-                                    link = {tile.data.link}
-                                    image = {tile.data.image}
-                                    filter= {filter}
+                                    url = {tile.data.url}
+                                    favIconUrl = {tile.data.favIconUrl}
                                 />
                             ))}
-                            <Toaster
-                                position="bottom-right"
-                                toastOptions={{
-                                style: {
-                                    fontSize: '1rem',
-                                },
-                                }}
-                            />  
                         </div>
                     </div>
                 </section>
             </div>
         </main>
-    );
-};
+  )
+}
 
-export default Tiles;
+export default CustomTiles

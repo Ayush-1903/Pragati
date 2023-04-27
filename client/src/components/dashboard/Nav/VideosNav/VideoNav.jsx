@@ -88,24 +88,24 @@ const VideoNav = () => {
 
                 <button className='menu-trigger' onClick={() => setMobileMenu(!mobileMenu)}>    
                     {mobileMenu ? (
-                        <i class='bx bx-x-circle'></i>
+                        <i className='bx bx-x-circle'></i>
                         ) : ( 
-                        <i class='bx bx-menu'></i>
+                        <i className='bx bx-menu'></i>
                         )
                     }
                 </button>
 
             </div>
             
-            {active === "APTITile" && <Tiles title= "Aptitude YouTube Channels" data={ytData}/>}
-            {active === "PracticeTile" && <Tiles title= "DSA Youtube Channels" data={ytData}/>}
-            {active === "FreelanceTile" && <Tiles title="Freelancing YouTube Channels" data={ytData}/>}
-            {active === "InterviewTile" && <Tiles title="Interview YouTube Channels" data={ytData}/>}
-            {active === "WEBTile" && <Tiles title= "Web Dev YouTube Channels" data={ytData}/>}
-            {active === "DATATile" && <Tiles title= "ML YouTube Channels" data={ytData}/>}
-            {active === "DSATile" && <Tiles title= "DSA YouTube Channels" data={ytData}/>}
-            {active === "GATETile" && <Tiles title= "GATE YouTube Channels" data={ytData}/>}
-            {active === "CATTile" && <Tiles title= "CAT YouTube Channels" data={ytData}/>}
+            {active === "APTITile" && <Tiles filter= "Aptitude YouTube Channels" data={ytData}/>}
+            {active === "PracticeTile" && <Tiles filter= "DSA Youtube Channels" data={ytData}/>}
+            {active === "FreelanceTile" && <Tiles filter="Freelancing YouTube Channels" data={ytData}/>}
+            {active === "InterviewTile" && <Tiles filter="Interview YouTube Channels" data={ytData}/>}
+            {active === "WEBTile" && <Tiles filter= "Web Dev YouTube Channels" data={ytData}/>}
+            {active === "DATATile" && <Tiles filter= "ML YouTube Channels" data={ytData}/>}
+            {active === "DSATile" && <Tiles filter= "DSA YouTube Channels" data={ytData}/>}
+            {active === "GATETile" && <Tiles filter= "GATE YouTube Channels" data={ytData}/>}
+            {active === "CATTile" && <Tiles filter= "CAT YouTube Channels" data={ytData}/>}
         </div>
     )
 }

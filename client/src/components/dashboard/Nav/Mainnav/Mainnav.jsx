@@ -89,17 +89,17 @@ const Nav = () => {
 
             </div>
             
-            {active === "APTITile" && <Tiles title= "Aptitude" data={tileData}/>}
-            {active === "PracticeTile" && <Tiles title= "Practice DSA" data={tileData}/>}
-            {active === "FreelanceTile" && <Tiles title="Freelancing" data={tileData}/>}
-            {active === "InterviewTile" && <Tiles title="Interview" data={tileData}/>}
-            {active === "WEBTile" && <Tiles title= "Web Development" data={tileData}/>}
-            {active === "DATATile" && <Tiles title= "Data Science and ML" data={tileData}/>}
-            {active === "PlacementTile" && <Tiles title= "Internship" data={tileData}/>}
-            {active === "JobTile" && <Tiles title= "Job Search" data={tileData}/>}
-            {active === "DSATile" && <Tiles title= "Data Structures and Algorithms" data={tileData}/>}
-            {active === "GATETile" && <Tiles title= "GATE" data={tileData}/>}
-            {active === "CATTile" && <Tiles title= "CAT" data={tileData}/>}
+            {active === "APTITile" && <Tiles filter= "Aptitude" data={tileData}/>}
+            {active === "PracticeTile" && <Tiles filter= "Practice DSA" data={tileData}/>}
+            {active === "FreelanceTile" && <Tiles filter="Freelancing" data={tileData}/>}
+            {active === "InterviewTile" && <Tiles filter="Interview" data={tileData}/>}
+            {active === "WEBTile" && <Tiles filter= "Web Development" data={tileData}/>}
+            {active === "DATATile" && <Tiles filter= "Data Science and ML" data={tileData}/>}
+            {active === "PlacementTile" && <Tiles filter= "Internship" data={tileData}/>}
+            {active === "JobTile" && <Tiles filter= "Job Search" data={tileData}/>}
+            {active === "DSATile" && <Tiles filter= "Data Structures and Algorithms" data={tileData}/>}
+            {active === "GATETile" && <Tiles filter= "GATE" data={tileData}/>}
+            {active === "CATTile" && <Tiles filter= "CAT" data={tileData}/>}
         </div>
     )
 }

@@ -1,56 +1,94 @@
-import React, {useContext, useEffect, useState} from 'react';
-import Tiles from '../WebTiles/Tiles';
-import { collection, getDocs } from "firebase/firestore";
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import React, {useEffect, useState, useContext} from 'react';
+import {Tooltip, IconButton} from '@mui/material';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { db } from '../../firebase-config';
+import { collection, addDoc, getDocs, query, where, deleteDoc } from 'firebase/firestore';
+import { AuthContext } from '../../../../../context/AuthContext';
+import { toast } from 'react-hot-toast';
 
-const FavTile = () => {
+const FavTile = ({ title, link, image, description, filter }) => {
 
-    const[tileData, setTileData] = useState([]);
+    const [shimmer, setShimmer] = useState(true);
+    const [showContent, setShowContent] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);  
+    const [isFavourite, setIsFavourite] = useState(false);
+    const [isDeleted, setIsDeleted] = useState(false);
 
-    // useEffect(() => {
-    //     getWebsite()
-    // }, [userEmail])
+    const { user } = useContext(AuthContext);
+    const email = user?.user?.email;
+    
+    useEffect(() => {
+      const shimmerInterval = setInterval(() => {
+        setShimmer(!shimmer);
+      }, 1200);
+  
+      setTimeout(() => {
+        setShimmer(false);
+        setShowContent(true);
+      }, 1200);
+  
+      setIsMounted(true);
+  
+      return () => clearInterval(shimmerInterval);
+  
+    }, [shimmer]);
 
-    // useEffect(() => {
-    //     console.log(tileData);
-    // }), [tileData]
+    const handleDelete = async () => {
+      try {
+        const querySnapshot = await getDocs(
+          query(collection(db, 'favourites', 'userEmails', email))
+        );
+        querySnapshot.forEach(async (doc) => {
+          if (doc.data().link === link) {
+            await deleteDoc(doc.ref);
+            setIsFavourite(false);
+            setIsDeleted(true);
+          }
+        });
+      } catch (error) {
+        console.error("Error deleting document: ", error);
+      }
 
-    // function getWebsite() {
-
-    //     const webData = collection(db, 'favourites', 'userEmails', userEmail);
-
-    //     getDocs(webData)
-    //       .then((res) => {
-    //         const tiles = res.docs.map((doc) => {
-    //           const data = doc.data();
-    //           const id = doc.id;
-    //           const imageUrl = data.image;
-    //           return {
-    //             data: { ...data, image: null },
-    //             id: id,
-    //             imageUrl: imageUrl,
-    //           };
-    //         });
-    //         Promise.all(
-    //           tiles.map((tile) =>
-    //             getDownloadURL(ref(getStorage(), tile.imageUrl))
-    //               .then((url) => ({ ...tile, data: { ...tile.data, image: url } }))
-    //               .catch((error) => console.log(error.message))
-    //           )
-    //         ).then((results) => {
-    //           setTileData(results);
-    //         });
-    //       })
-    //       .catch((error) => console.log(error.message));
-    // }   
-
+      toast.success('Removed from favourites');
+    };
+    
+    if (isDeleted) {
+      return null;
+    }
+    
     return (
-        <div className="navdash">
+      <div className="box">
+        <div className={`shimmer ${shimmer ? 'shimmer-effect' : ''}`}></div>
+          <div className={`content ${showContent ? 'show' : ''}`}>
 
-            <Tiles title= "Favourites" data={tileData}/>
+          <div className='favourite' onClick={handleDelete}>
+              <div className='hollow'>
+                  <Tooltip title='Remove from favourites' placement='top' arrow color='black'>
+                  <IconButton>
+                      <DeleteOutlineIcon className='hollowStar'/>
+                  </IconButton>
+                  </Tooltip>
+              </div>
 
+              <div className="type">
+                <p>{filter}</p>
+              </div>
+          </div>
+
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: 'none' }}
+          >
+            <div className="icon">
+              <img alt="LinkedIn" src={image} />
+            </div>
+            <h4 className="title">{title}</h4>
+            <p className="description">{description}</p>
+          </a>
         </div>
+      </div>
     )
 }
 
