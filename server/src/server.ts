@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
+import morgan from "morgan";
 
 const app: Express = express();
 const PORT = process.env.PORT || 4000;
@@ -13,6 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(morgan(":date[web] ⌛ :method :url :status ⚫ :response-time ms - :res[content-length]"));
 
 app.use("/user", userRoutes);
 
