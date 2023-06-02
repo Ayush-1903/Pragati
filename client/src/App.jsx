@@ -8,6 +8,7 @@ import Features from "./components/sections/pages/Features";
 import Navbar from "./components/sections/pages/Navbar";
 import Sidebar from "./components/dashboard/Sidebar/Sidebar";
 import Contact from "./components/sections/pages/Contact";
+import Apk from "./components/sections/pages/Apk";
 import ForgotPassword from "./components/sections/pages/ForgotPassword";
 import ResetPassword from "./components/sections/pages/ResetPassword";
 import { useAuthContext } from "./hooks/useAuthContext";
@@ -37,6 +38,7 @@ function App() {
           <Route path="auth" element={<Auth />} />
           <Route path="/about" element={[<Navbar />, <About />]} />
           <Route path="/features" element={[<Navbar />, <Features />]} />
+          <Route path="/download-apk" element={[<Navbar />, <Apk />]} />
           <Route path="/contact" element={[<Navbar />, <Contact />]} />
           <Route path="/dashboard" element={<Sidebar />}></Route>
         </Routes>

@@ -18,6 +18,7 @@ export const Navbar = () => {
                     <li><NavLink to="/about">About</NavLink></li>
                     <li><NavLink to="/features">Features</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li> 
+                    <li><NavLink to="/download-apk">Apk</NavLink></li> 
                     <li><div className="border-first-button"><NavLink to="/auth">Sign Up</NavLink></div></li> 
                 </ul>        
                 <button className='menu-trigger' onClick={() => setShowMenu(!showMenu)}>    

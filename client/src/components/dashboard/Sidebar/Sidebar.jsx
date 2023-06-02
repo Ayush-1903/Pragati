@@ -87,7 +87,7 @@ const Sidebar = () => {
                         <li className={`nav-link ${activeLink === "Fav" ? "sidebar-active" : ""}`} onClick={() => setActiveLink("Fav")}>
                             <a onClick={() => setActive("Fav")}>
                                 <i className='bx bx-star icon'></i>
-                                <span className="text nav-text">Favourite Tiles</span>
+                                <span className="text nav-text">Favourites</span>
                             </a>    
                         </li>
 

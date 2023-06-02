@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {Tooltip, IconButton} from '@mui/material';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { collection, addDoc, getDocs, query, where, deleteDoc } from 'firebase/firestore';
+import { AuthContext } from '../../../../../context/AuthContext';
+import { toast } from 'react-hot-toast';
 
 const CustomTile = ({ title, url, favIconUrl }) => {
 
@@ -32,7 +35,7 @@ const CustomTile = ({ title, url, favIconUrl }) => {
 
           <div className='favourite'>
               <div className='hollow'>
-                  <Tooltip title='Remove from favourites' placement='top' arrow color='black'>
+                  <Tooltip title='Remove from custom' placement='top' arrow color='black'>
                   <IconButton>
                       <DeleteOutlineIcon className='hollowStar'/>
                   </IconButton>
